@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TEFFEST – The Entertainment Fair & Festival, a platform to spotlight and empower Africa's entertainment and creative industries.">
+    <meta name="keywords" content="TEFFEST, Entertainment Fair, Festival, Africa, Creative Industries, Masterclasses, Magazine, Networking, Innovation">
+    <meta name="author" content="RedHot Group">
+    <title>TEFFEST – The Entertainment Fair & Festival</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">   
+    <style>
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeInUp 1s ease-out forwards; }
+        .animate-on-scroll { opacity: 0; }
+        .fade-in-delay-100 { animation-delay: 0.1s; animation: fadeInUp 0.8s ease-out forwards; }
+        .fade-in-delay-200 { animation-delay: 0.2s; animation: fadeInUp 0.8s ease-out forwards; }
+        .fade-in-delay-300 { animation-delay: 0.3s; animation: fadeInUp 0.8s ease-out forwards; }
+        .fade-in-delay-400 { animation-delay: 0.4s; animation: fadeInUp 0.8s ease-out forwards; }
+        .fade-in-delay-500 { animation-delay: 0.5s; animation: fadeInUp 0.8s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-[url('assets/studio-bg.webp')] bg-center bg-cover bg-no-repeat bg-fixed text-[#F0E5CF] scroll-smooth font-['Raleway'] tracking-wide overflow-x-hidden">
+    <div class="bg-black/70 min-h-screen">
+        <nav class="p-2 sticky top-0 z-10">
+                <div class="container mx-auto flex items-center justify-between">
+                 <!-- Logo -->
+                    <a class="pl-14" href="index.html">
+                    <img src="assets/logo.png" class="h-20 p-0 flex justify-end" alt="RedHot Group Logo">
+                    </a>
+
+                    <!-- Hamburger Button (always visible) -->
+                    <button id="menu-toggle" class="text-rose-200 hover:text-rose-500 focus:outline-none z-30">
+                        <!-- Hamburger icon -->
+                        <svg id="icon-hamburger" class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+
+                        <!-- Close icon (initially hidden) -->
+                        <svg id="icon-close" class="w-8 h-8 hidden z-40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+
+
+                    <!-- Fullscreen Navigation Menu -->
+                    <ul id="menu" class="fixed inset-0 bg-stone-900 bg-opacity-95 text-rose-200 hidden flex flex-col items-center justify-start space-y-6 text-xl z-20 transition-opacity duration-300 py-10">
+                        <li><img class="h-40 p-0 flex justify-end" src="assets/logo.png" alt="RedHot Group Logo"></li>
+                        <li><a href="index.html" class="hover:text-rose-500 hover:underline">Home</a></li>
+                        <li><a href="RedhotConcept.html" class="hover:text-rose-500 hover:underline">RedhotConcept</a></li>
+                        <li><a href="Doubledoors.html" class="hover:text-rose-500 hover:underline">Double Doors Studios</a></li>
+                        <li><a href="Teffest.html" class="hover:text-rose-500 hover:underline">TEFFEST</a></li>
+                        <li><a href="Oseal.html" class="hover:text-rose-500 hover:underline">Oseal</a></li>
+                        <li><a href="#contact" class="hover:text-rose-500 hover:underline">Contact</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+        <main>            
+            <section class="w-full py-16 px-4 sm:px-12 animate-fade-in">
+                <div class="max-w-5xl mx-auto text-center space-y-6">
+                    <h1 class="text-4xl font-bold text-[#f6d9b4]">TEFFEST – The Entertainment Fair & Festival</h1>
+                    <p class="text-lg text-stone-100 leading-relaxed">
+                        TEFFEST is more than a festival — it’s a <span class="text-rose-300 font-medium">transformational platform</span> created to spotlight, empower, and expand the business side of Africa’s vibrant entertainment and creative industries.
+                    </p>
+                    <p class="text-stone-100">Held annually, TEFFEST brings together a diverse community of creatives, entrepreneurs, thought leaders, investors, and policymakers, all united by a shared mission: to unlock the full economic potential of African entertainment.</p>
+                    <p class="text-stone-100">With a deep focus on innovation, collaboration, and industry sustainability, TEFFEST serves as a meeting ground for <strong>talent and enterprise</strong>. Whether you're a filmmaker, fashion designer, record label executive, tech startup, or cultural policymaker, TEFFEST is where <span class="text-rose-400 font-semibold">opportunity meets strategy</span>.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                        <div class="bg-white/10 p-6 rounded-lg border border-white/20">
+                            <h3 class="text-xl font-semibold text-[#f6d9b4] mb-2">🛍️<br> The TEFFEST Main Festival</h3>
+                            <p class="text-sm">A multi-day live event with exhibitions, performances, product showcases, and networking. Connect directly with decision-makers and collaborators.</p>
+                        </div>
+                        <div class="bg-white/10 p-6 rounded-lg border border-white/20">
+                            <h3 class="text-xl font-semibold text-[#f6d9b4] mb-2">📚 <br> TEFFEST Masterclasses</h3>
+                            <p class="text-sm">Learn from industry veterans and global experts. Topics include IP management, creative finance, branding, and cross-border strategies.</p>
+                        </div>
+                        <div class="bg-white/10 p-6 rounded-lg border border-white/20">
+                            <h3 class="text-xl font-semibold text-[#f6d9b4] mb-2">📰 <br> The TEFFEST Magazine</h3>
+                            <p class="text-sm">An annual publication featuring interviews, trend reports, business profiles, and highlights. Your go-to industry keepsake and resource.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 space-y-4">
+                        <h2 class="text-2xl font-semibold text-rose-500">🌍 Impact & Vision</h2>
+                        <p class="text-stone-100">TEFFEST is designed to <strong>bridge the gap</strong> between African creativity and global commerce. It celebrates artistry while equipping professionals with the tools, insights, and connections needed to thrive.</p>
+                        <p class="text-stone-100">Through its growing influence, TEFFEST is positioning Africa not just as a source of creative inspiration — but as a <strong>hub for world-class content, business innovation, and cultural leadership</strong>.</p>
+                    </div>
+
+                    <div class="mt-8">
+                        <p class="text-lg text-[#f6d9b4] font-semibold">🚀 Ready to Join the Movement?</p>
+                        <p class="text-sm">Explore upcoming events, register your brand, or partner with us at <a href="https://www.teffest.com" class="text-rose-300 hover:underline">www.teffest.com</a></p>
+                        <a aria-label="Book Your Slot Now" href="https://www.teffest.com" target="_blank" class="inline-block mt-4 bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 px-6 rounded-lg shadow transition">Book Your Slot Now</a>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="bg-[#1e1e1e] text-[#e9d7c3] py-10">
+                <div class="container mx-auto px-6 md:px-12">
+                    <div class="flex flex-col md:flex-row justify-around items-center gap-2 md:gap-0">                        
+                        <div class="text-center md:text-left">
+                            <img src="assets/Screenshot_2025-07-11_163422-removebg-preview.png" class="h-12 mx-auto md:mx-0 mb-2" alt="RedHot Logo">
+                            <p class="text-sm">RedHot Group <br> Elevating Ideas, Talent & Entertainment</p>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-center gap-4">
+                            <a href="#" class="hover:text-rose-400 transition">Home</a> 
+                            <a aria-label="RedhotConcept" href="RedhotConcept.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">RedhotConcept</a>
+                            <a aria-label="Double Doors Studios" href="Doubledoors.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">Double Doors Studios</a>
+                            <a aria-label="TEFFEST" href="Teffest.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">TEFFEST</a>
+                            <a aria-label="Oseal" href="Oseal.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">Oseal</a>
+                            <a aria-label="Contact" href="#contact" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">Contact</a>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" aria-label="Instagram" class="hover:text-rose-400 transition">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.206.058 2.003.25 2.47.415a4.927 4.927 0 011.675 1.093 4.927 4.927 0 011.093 1.675c.165.467.357 1.264.415 2.47.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.058 1.206-.25 2.003-.415 2.47a4.927 4.927 0 01-1.093 1.675 4.927 4.927 0 01-1.675 1.093c-.467.165-1.264.357-2.47.415-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.206-.058-2.003-.25-2.47-.415a4.927 4.927 0 01-1.675-1.093 4.927 4.927 0 01-1.093-1.675c-.165-.467-.357-1.264-.415-2.47C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.058-1.206.25-2.003.415-2.47a4.927 4.927 0 011.093-1.675 4.927 4.927 0 011.675-1.093c.467-.165 1.264-.357 2.47-.415C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.332.015 7.053.072 5.775.129 4.833.296 4.053.61a6.87 6.87 0 00-2.49 1.64A6.87 6.87 0 00.61 4.053C.296 4.833.129 5.775.072 7.053.015 8.332 0 8.741 0 12c0 3.259.015 3.668.072 4.947.057 1.278.224 2.22.538 3 .315.78.738 1.446 1.362 2.07.624.624 1.29 1.047 2.07 1.362.78.314 1.722.481 3 .538 1.279.057 1.688.072 4.947.072s3.668-.015 4.947-.072c1.278-.057 2.22-.224 3-.538a6.87 6.87 0 002.07-1.362 6.87 6.87 0 001.362-2.07c.314-.78.481-1.722.538-3 .057-1.279.072-1.688.072-4.947s-.015-3.668-.072-4.947c-.057-1.278-.224-2.22-.538-3a6.87 6.87 0 00-1.362-2.07 6.87 6.87 0 00-2.07-1.362c-.78-.314-1.722-.481-3-.538C15.668.015 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+                            </a>
+                            <a href="#" aria-label="Twitter" class="hover:text-rose-400 transition">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.954 4.569a10 10 0 01-2.825.775A4.958 4.958 0 0023.337 3.1a10.1 10.1 0 01-3.127 1.184 4.92 4.92 0 00-8.379 4.482A13.978 13.978 0 011.671 3.15a4.822 4.822 0 001.523 6.573 4.902 4.902 0 01-2.229-.616v.06a4.936 4.936 0 003.946 4.827 4.902 4.902 0 01-2.224.084 4.937 4.937 0 004.604 3.417A9.867 9.867 0 010 19.54a13.951 13.951 0 007.548 2.209c9.057 0 14.01-7.5 14.01-14.004 0-.213-.006-.425-.017-.636a9.936 9.936 0 002.414-2.54z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-center text-sm text-stone-500">
+                        © 2025 RedHot Group. All rights reserved.
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedHot Group</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+      nav button.active .underline {
+        transform: scaleX(1) !important;
+      }
+       @keyframes marquee {
+      0%   { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    </style>
+</head>
+<body class="bg-stone-950 text-rose-200 min-h-screen relative">
+
+    <button id="openMenu" class="fixed top-5 left-5 z-50 text-rose-200 text-3xl focus:outline-none">
+      &#9776;
+    </button>
+
+    <!-- Slide-out menu -->
+    <div id="menu" class="fixed top-0 left-0 h-full w-64 bg-stone-500 bg-opacity-95 text-stone-100 transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
+      <div class="flex justify-endr px-4 py-3">
+        <button id="closeMenu" class="text-3xl text-end text-stone-100 focus:outline-none">&times;</button>
+      </div>
+      <div>
+        <img class="h-12 mt-4" src="assets/logo.png" alt="RedHot Group Logo">
+      </div>
+
+      <ul class="flex flex-col space-y-6 text-lg px-6 mt-6">
+        <li><a href="index.html" class="hover:text-rose-400">Home</a></li>
+        <li><a href="RedhotConcept.html" class="hover:text-rose-400">RedhotConcepts</a></li>
+        <li><a href="Doubledoors.html" class="hover:text-rose-400">Double Doors Studios</a></li>
+        <li><a href="Oseal.html" class="hover:text-rose-400">Oseal</a></li>
+        <li><a href="Oyep.html" class="hover:text-rose-400">OYEP</a></li>
+        <li><a href="https://www.teffest.com/" class="hover:text-rose-400">TEFFEST</a></li>
+      </ul>
+    </div>
+    
+    <!-- Fixed Social Sidebar -->
+    <div class="fixed right-4 top-2/3 transform -translate-y-1/2 z-50 flex flex-col space-y-4">
+        <a href="#" class="border border-stone-600 hover:bg-white text-stone-600 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+            <i data-lucide="facebook"></i>
+        </a>
+        <a href="#" class="border border-stone-600 hover:bg-white text-stone-600 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+            <i data-lucide="instagram"></i>
+        </a>
+        <a href="#contact" class="border border-stone-600 hover:bg-white text-stone-600 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+            <i data-lucide="mail"></i>
+        </a>
+    </div>
+
+  <!-- Page Content -->
+<section id="hero" class="relative h-[60vh] overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="assets/studio-bg.webp" 
+            alt="Production Studio" 
+            class="w-full h-full object-cover"/>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
+      </div>
+      <div class="relative z-10 h-full flex flex-col justify-between">
+        <div class="flex-1 flex items-center justify-center">
+          <div class="text-center text-white">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4">
+              <span class="text-stone-200">REDHOT</span><br/>
+              <span class="text-red-500">CONCEPTS</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light">Entertainment Management Excellence</p>
+          </div>
+        </div>
+        <div class="pb-8">
+          <nav class="flex justify-center space-x-8 md:space-x-16">
+            <button data-scroll="brands" class="group text-white hover:text-yellow-400 transition-all duration-300">
+              <div class="text-lg md:text-xl font-semibold uppercase tracking-wide">brands</div>
+              <div class="underline h-0.5 bg-yellow-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 mt-1"></div>
+            </button>
+            <button data-scroll="production" class="group text-white hover:text-yellow-400 transition-all duration-300">
+              <div class="text-lg md:text-xl font-semibold uppercase tracking-wide">production</div>
+              <div class="underline h-0.5 bg-yellow-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 mt-1"></div>
+            </button>
+            <button data-scroll="management" class="group text-white hover:text-yellow-400 transition-all duration-300">
+              <div class="text-lg md:text-xl font-semibold uppercase tracking-wide">management</div>
+              <div class="underline h-0.5 bg-yellow-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 mt-1"></div>
+            </button>
+          </nav>
+        </div>
+        <div class="flex justify-center mr-4 mb-4">
+            <a href="#soiree30">
+                <button class="p-4 text-center tracking-wide rounded-full text-amber-500 border border-amber-500 hover:text-yellow-400 transition-all duration-300 animate-bounce text-lg"
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-down-icon lucide-chevrons-down"><path d="m7 6 5 5 5-5"/><path d="m7 13 5 5 5-5"/></svg>
+                </button>
+            </a>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- 💼 Brands -->
+    <section id="brands" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    <span class="text-red-600">Brand</span> Partnerships
+                </h2>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl">
+                    <img src="https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=600" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" alt="Creative Campaigns"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                        <div class="absolute bottom-6 left-6">
+                            <i data-lucide="palette" class="text-yellow-400 mb-2"></i>
+                            <h3 class="text-white font-semibold text-lg">Creative Campaigns</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl">
+                    <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" alt="Strategic Alliances"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                        <div class="absolute bottom-6 left-6">
+                            <i data-lucide="award" class="text-yellow-400 mb-2"></i>
+                            <h3 class="text-white font-semibold text-lg">Strategic Alliances</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl">
+                    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" alt="Global Reach"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                        <div class="absolute bottom-6 left-6">
+                            <i data-lucide="star" class="text-yellow-400 mb-2"></i>
+                            <h3 class="text-white font-semibold text-lg">Global Reach</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </section>
+
+    <!-- Production Section -->
+    <section id="production" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    <span class="text-red-600">Production</span> Excellence
+                </h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" alt="Film Production"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-red-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i data-lucide="film"></i>
+                            <p class="font-medium">Film Production</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" alt="Music Production"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-red-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i data-lucide="music"></i>
+                            <p class="font-medium">Music Production</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.pexels.com/photos/3178938/pexels-photo-3178938.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" alt="Event Production"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-red-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i data-lucide="camera"></i>
+                            <p class="font-medium">Event Production</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=400" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" alt="Digital Content"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-red-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i data-lucide="users"></i>
+                            <p class="font-medium">Digital Content</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </section>
+
+    <!-- Management Section -->
+    <section id="management" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                <span class="text-red-600"></span> Management
+            </h2>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" class="w-full h-80 object-cover" alt="Artist Representation"/>
+                <div class="absolute inset-0 bg-gradient-to-r from-red-600/90 to-transparent">
+                <div class="p-8 h-full flex flex-col justify-center">
+                    <h3 class="text-white text-2xl font-bold mb-4">Artist Representation</h3>
+                    <p class="text-white/90 text-lg leading-relaxed">
+                    Comprehensive career development and strategic positioning for emerging and established artists.
+                    </p>
+                </div>
+                </div>
+            </div>
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800" class="w-full h-80 object-cover" alt="Career Development"/>
+                <div class="absolute inset-0 bg-gradient-to-l from-yellow-500/90 to-transparent">
+                <div class="p-8 h-full flex flex-col justify-center">
+                    <h3 class="text-white text-2xl font-bold mb-4">Career Development</h3>
+                    <p class="text-white/90 text-lg leading-relaxed">
+                    Strategic planning and execution to elevate talent to the next level of their careers.
+                    </p>
+                </div>
+                </div>
+            </div>
+            </div>
+      </div>
+    </section>
+
+   <section id="projects" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    <span class="text-red-600"></span> Projects
+                </h2>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="group relative overflow-hidden rounded-tr-2xl rounded-bl-2xl shadow-xl bg-pink-300 pl-8">
+                    <img src="assets/capE.webp" class="w-full h-78 object-cover group-hover:scale-110 transition-transform duration-500" alt="Project 1"/>
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
+                    <div class="absolute bottom-6 left-6">
+                    <span class="bg-amber-600/30 text-white px-3 py-1 rounded-full text-sm font-medium">Captain E</span>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-tr-2xl rounded-bl-2xl shadow-xl bg-pink-300 pl-8">
+                    <img src="assets/Omotola-trm.jpg" class="w-full h-78 object-cover group-hover:scale-110 transition-transform duration-500" alt="Project 2"/>
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
+                    <div class="absolute bottom-6 left-6">
+                    <span class="bg-amber-600/30 text-white px-3 py-1 rounded-full text-sm font-medium">OTRM</span>
+                    </div>
+                </div>          
+            </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    <span class="text-red-600">Current</span> Projects
+                </h2>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl">
+                    <img src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=600" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" alt="Project 1"/>
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
+                    <div class="absolute bottom-6 left-6">
+                        <span class="text-white text-lg uppercase text-bold border-b-2 border-yellow-500">Mother's Love</span>
+                        <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">In Production</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl">
+                    <img src="https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=600" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" alt="Project 2"/>
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
+                    <div class="absolute bottom-6 left-6">
+                        <span class="text-white text-lg uppercase text-bold border-b-2 border-yellow-500">RR the Movie</span>
+                        <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium">Pre-Production</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl">
+                    <img src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=600" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" alt="Project 3"/>
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
+                    <div class="absolute bottom-6 left-6">
+                        <span class="text-white text-lg uppercase text-bold border-b-2 border-yellow-500">The smoke</span>
+                        <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">In Production</span>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </section>
+
+  <!-- 🥂 30th Anniversary Soirée -->
+      <section id="soiree30" class="relative overflow-hidden">
+      <!-- Background visuals -->
+      <div class="absolute inset-0">
+        <img
+          src="https://images.pexels.com/photos/209138/pexels-photo-209138.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt="Glamorous red carpet backdrop"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+        <div class="absolute -top-24 -right-24 w-[36rem] h-[36rem] rounded-full blur-3xl opacity-30" style="background: radial-gradient(circle at 30% 30%, #f59e0b, transparent 55%), radial-gradient(circle at 70% 70%, #ef4444, transparent 55%);"></div>
+      </div>
+
+      <!-- Hero content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 pt-20 pb-12 text-center text-white">
+        <p class="uppercase tracking-[0.35em] text-sm md:text-base text-yellow-300/90">A Legacy in Lights</p>
+        <h2 class="mt-3 text-4xl md:text-6xl font-extrabold leading-tight">
+          30<sup class="align-super text-2xl md:text-4xl">th</sup> Anniversary Soirée
+        </h2>
+        <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-white/90">
+          Celebrate a veteran actress’s remarkable three decades on screen—an intimate night of music, memories, and magic.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-300"></i><span>Red Carpet Arrival</span>
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur">
+            <i data-lucide="music" class="w-4 h-4 text-pink-300"></i><span>Live Performances</span>
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur">
+            <i data-lucide="camera" class="w-4 h-4 text-rose-300"></i><span>Photo Moments</span>
+          </span>
+        </div>
+        <div class="mt-10 flex items-center justify-center gap-4">
+          <a href="#rsvp" class="px-6 py-3 rounded-full bg-yellow-400 text-black font-semibold shadow-lg hover:bg-yellow-300 transition">RSVP Now</a>
+          <a href="#tour" class="px-6 py-3 rounded-full border border-white/30 text-white font-semibold hover:bg-white/10 transition">View Tour</a>
+        </div>
+      </div>
+
+      <!-- Marquee ribbon -->
+      <div class="relative z-10 bg-black/50 border-y border-white/10 backdrop-blur">
+        <div class="whitespace-nowrap animate-[marquee_18s_linear_infinite] py-3 text-white/80 text-sm md:text-base">
+          <span class="mx-6 inline-flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-300"></i>30 Years • 50+ Productions • 12 Awards • Global Icon</span>
+          <span class="mx-6 inline-flex items-center gap-2"><i data-lucide="clapperboard" class="w-4 h-4 text-rose-300"></i>Premiere Screenings</span>
+          <span class="mx-6 inline-flex items-center gap-2"><i data-lucide="glass-water" class="w-4 h-4 text-pink-300"></i>Soirée Cocktails</span>
+          <span class="mx-6 inline-flex items-center gap-2"><i data-lucide="microphone" class="w-4 h-4 text-indigo-300"></i>Tribute Performances</span>
+        </div>
+      </div>
+
+      <!-- Meet & Greet Locations -->
+      <div class="relative z-10 bg-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+          <div class="text-center">
+            <h3 class="text-3xl md:text-4xl font-bold">Meet &amp; Greets</h3>
+            <p class="mt-3 text-gray-600">Intimate sessions across landmark venues. Limited spots—arrive early!</p>
+          </div>
+
+          <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="group overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-black/5">
+              <div class="relative h-56">
+                <img src="https://images.pexels.com/photos/167092/pexels-photo-167092.jpeg?auto=compress&cs=tinysrgb&w=800" alt="City Theater" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <span class="absolute top-3 left-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Lagos
+                </span>
+              </div>
+              <div class="p-5">
+                <h4 class="text-lg font-semibold">Civic Centre</h4>
+                <p class="mt-1 text-gray-600">Sat, Oct 4 • 4:00 PM</p>
+                <div class="mt-4 flex items-center gap-3 text-sm text-gray-600">
+                  <i data-lucide="users" class="w-4 h-4"></i><span>Fan Q&amp;A</span>
+                  <i data-lucide="camera" class="w-4 h-4 ml-4"></i><span>Photo Ops</span>
+                </div>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="group overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-black/5">
+              <div class="relative h-56">
+                <img src="https://images.pexels.com/photos/167475/pexels-photo-167475.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Art Gallery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <span class="absolute top-3 left-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Abuja
+                </span>
+              </div>
+              <div class="p-5">
+                <h4 class="text-lg font-semibold">National Arts Theatre</h4>
+                <p class="mt-1 text-gray-600">Wed, Oct 8 • 5:30 PM</p>
+                <div class="mt-4 flex items-center gap-3 text-sm text-gray-600">
+                  <i data-lucide="signature" class="w-4 h-4"></i><span>Signings</span>
+                  <i data-lucide="music" class="w-4 h-4 ml-4"></i><span>Acoustic Set</span>
+                </div>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="group overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-black/5">
+              <div class="relative h-56">
+                <img src="https://images.pexels.com/photos/258447/pexels-photo-258447.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Waterfront" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <span class="absolute top-3 left-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Port Harcourt
+                </span>
+              </div>
+              <div class="p-5">
+                <h4 class="text-lg font-semibold">Riverside Pavilion</h4>
+                <p class="mt-1 text-gray-600">Sun, Oct 12 • 3:00 PM</p>
+                <div class="mt-4 flex items-center gap-3 text-sm text-gray-600">
+                  <i data-lucide="cup-soda" class="w-4 h-4"></i><span>Toast &amp; Chat</span>
+                  <i data-lucide="heart" class="w-4 h-4 ml-4"></i><span>Charity Spotlight</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pit-Stop Tour Timeline -->
+      <div id="tour" class="relative z-10 bg-gradient-to-b from-white to-rose-50/60">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+          <div class="text-center">
+            <h3 class="text-3xl md:text-4xl font-bold">Pit-Stop Tribute Tour</h3>
+            <p class="mt-3 text-gray-600">Flash visits to iconic locations that shaped the journey.</p>
+          </div>
+
+          <div class="mt-12 relative">
+            <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-rose-300 via-yellow-300 to-transparent"></div>
+            <div class="space-y-10">
+              <!-- Item -->
+              <div class="relative md:flex md:items-center md:gap-10">
+                <div class="flex items-center gap-3 md:w-1/2 md:justify-end">
+                  <span class="hidden md:block text-right">
+                    <p class="font-semibold">Oct 2 • 11:00 AM</p>
+                    <p class="text-gray-600">Academy Hall, Surulere</p>
+                  </span>
+                  <span class="relative z-10 inline-flex items-center justify-center w-8 h-8 rounded-full bg-rose-500 text-white shadow ring-4 ring-white">
+                    <i data-lucide="film" class="w-4 h-4"></i>
+                  </span>
+                </div>
+                <div class="mt-3 md:mt-0 md:w-1/2">
+                  <div class="rounded-2xl bg-white shadow p-5">
+                    <h4 class="font-semibold">Debut Screening Revisit</h4>
+                    <p class="mt-1 text-gray-600 text-sm">A short clip showcase and storytelling session about the first big role.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Item -->
+              <div class="relative md:flex md:items-center md:gap-10 md:flex-row-reverse">
+                <div class="flex items-center gap-3 md:w-1/2 md:justify-start">
+                  <span class="hidden md:block">
+                    <p class="font-semibold">Oct 6 • 1:00 PM</p>
+                    <p class="text-gray-600">Independence Fountain</p>
+                  </span>
+                  <span class="relative z-10 inline-flex items-center justify-center w-8 h-8 rounded-full bg-yellow-500 text-black shadow ring-4 ring-white">
+                    <i data-lucide="trophy" class="w-4 h-4"></i>
+                  </span>
+                </div>
+                <div class="mt-3 md:mt-0 md:w-1/2">
+                  <div class="rounded-2xl bg-white shadow p-5">
+                    <h4 class="font-semibold">Awards Retrospective Stop</h4>
+                    <p class="mt-1 text-gray-600 text-sm">Fans parade the greatest hits, with pop-up interviews and confetti moments.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Item -->
+              <div class="relative md:flex md:items-center md:gap-10">
+                <div class="flex items-center gap-3 md:w-1/2 md:justify-end">
+                  <span class="hidden md:block text-right">
+                    <p class="font-semibold">Oct 10 • 6:00 PM</p>
+                    <p class="text-gray-600">Sunset Bay Walk</p>
+                  </span>
+                  <span class="relative z-10 inline-flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 text-white shadow ring-4 ring-white">
+                    <i data-lucide="sunset" class="w-4 h-4"></i>
+                  </span>
+                </div>
+                <div class="mt-3 md:mt-0 md:w-1/2">
+                  <div class="rounded-2xl bg-white shadow p-5">
+                    <h4 class="font-semibold">Golden Hour Fan Walk</h4>
+                    <p class="mt-1 text-gray-600 text-sm">A scenic stroll with polaroid snapshots and acoustic serenades.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Item -->
+              <div class="relative md:flex md:items-center md:gap-10 md:flex-row-reverse">
+                <div class="flex items-center gap-3 md:w-1/2 md:justify-start">
+                  <span class="hidden md:block">
+                    <p class="font-semibold">Oct 14 • 8:30 PM</p>
+                    <p class="text-gray-600">Soiree Venue • Grand Ballroom</p>
+                  </span>
+                  <span class="relative z-10 inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white shadow ring-4 ring-white">
+                    <i data-lucide="party-popper" class="w-4 h-4"></i>
+                  </span>
+                </div>
+                <div class="mt-3 md:mt-0 md:w-1/2">
+                  <div class="rounded-2xl bg-white shadow p-5">
+                    <h4 class="font-semibold">Finale: The Soirée</h4>
+                    <p class="mt-1 text-gray-600 text-sm">Red carpet, tributes &amp; a cinematic montage closing 30 unforgettable years.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map + RSVP -->
+      <div id="rsvp" class="relative z-10 bg-white">
+        <div class="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Visual map placeholder -->
+          <div class="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5">
+            <img
+              src="https://images.pexels.com/photos/373893/pexels-photo-373893.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Event locations map"
+              class="w-full h-80 md:h-full object-cover"
+            />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 text-white">
+              <h4 class="font-semibold">Tour Map</h4>
+              <p class="text-sm text-white/80">Swipe/scroll to explore locations. Full map available at RSVP.</p>
+            </div>
+          </div>
+
+          <!-- RSVP card -->
+          <div class="rounded-2xl bg-gradient-to-br from-yellow-100 via-white to-rose-50 p-6 md:p-8 shadow-lg ring-1 ring-black/5">
+            <div class="flex items-start gap-3">
+              <i data-lucide="ticket" class="w-6 h-6 text-rose-500"></i>
+              <div>
+                <h4 class="text-2xl font-bold">Reserve Your Moment</h4>
+                <p class="mt-1 text-gray-600">Limited VIP and fan access slots for meet &amp; greets and the soirée gala.</p>
+              </div>
+            </div>
+
+            <form class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Full Name</label>
+                <input type="text" class="mt-1 w-full rounded-xl border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose-400" placeholder="Adaeze Okafor" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" class="mt-1 w-full rounded-xl border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose-400" placeholder="you@example.com" />
+              </div>
+              <div class="md:col-span-2">
+                <label class="block text-sm font-medium text-gray-700">Select Event</label>
+                <select class="mt-1 w-full rounded-xl border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-rose-400">
+                  <option>Lagos • Civic Centre (Oct 4)</option>
+                  <option>Abuja • National Arts Theatre (Oct 8)</option>
+                  <option>Port Harcourt • Riverside Pavilion (Oct 12)</option>
+                  <option>Grand Soirée • Ballroom (Oct 14)</option>
+                </select>
+              </div>
+              <div class="md:col-span-2">
+                <button type="button" class="w-full rounded-xl bg-rose-600 text-white font-semibold py-3 hover:bg-rose-500 transition">
+                  Request Invitation
+                </button>
+              </div>
+              <p class="md:col-span-2 text-xs text-gray-500">
+                Submitting does not guarantee entry. You’ll receive confirmation with access details by email.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <footer class="bg-[#1e1e1e] text-[#e9d7c3] py-10">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-around items-center gap-2 md:gap-0">                        
+                <!-- Logo & Tagline -->
+                <div class="text-center md:text-left">
+                    <p class="text-center font-bold">CONTACT US</p>
+                    <p><a href="mailto:info@redhotgroup.com" class="text-stone-500 hover:text-stone-300">Redhot.concept@yahoo.com</a></p>
+                </div>
+                <!-- Social Media Icons -->
+                
+            </div>
+            <hr class="my-4 border-stone-600">
+            <div class="flex flex-col md:flex-row justify-between items-center">               
+                <div class="mt-8 text-center text-sm text-stone-500">
+                    © 2025 RedHot Group. All rights reserved.
+                </div>
+                <div>
+                    <img src="assets/logo.png" class="h-20 p-0" alt="RedHot Logo">
+                </div>
+            </div>                    
+        </div>
+    </footer>
+
+   <script>
+    const menu = document.getElementById("menu");
+    const openMenu = document.getElementById("openMenu");
+    const closeMenu = document.getElementById("closeMenu");
+
+    const navScreenHeight = window.innerHeight * 0.68; // 70% of viewport height
+
+    window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        if (scrollY > navScreenHeight) {
+        menu.classList.add("bg-black/80");
+        } else {
+        menu.classList.remove("bg-black/80");
+        }
+    });
+
+    // Open menu
+    openMenu.addEventListener("click", () => {
+        menu.classList.remove("-translate-x-full", "hidden");
+        menu.classList.add("translate-x-0");
+
+        openMenu.classList.add("hidden");   // hide open button
+        closeMenu.classList.remove("hidden"); // show close button
+    });
+
+    // Close menu
+    closeMenu.addEventListener("click", () => {
+        menu.classList.remove("translate-x-0");
+        menu.classList.add("-translate-x-full");
+
+        closeMenu.classList.add("hidden");  // hide close button
+        openMenu.classList.remove("hidden"); // show open button
+    });
+
+    lucide.createIcons();
+
+    // Smooth scroll
+    document.querySelectorAll("[data-scroll]").forEach(btn => {
+        btn.addEventListener("click", () => {
+        const section = document.getElementById(btn.getAttribute("data-scroll"));
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+        });
+    });
+
+    // Active section highlight
+    const sections = ["hero","brands","production","management","projects","contact","soiree30"];
+    window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(id => {
+        const el = document.getElementById(id);
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) current = id;
+        });
+
+        document.querySelectorAll("nav button").forEach(btn => {
+        if (btn.getAttribute("data-scroll") === current) {
+            btn.classList.add("active");
+        } else {
+            btn.classList.remove("active");
+        }
+        });
+
+        document.querySelectorAll("nav a").forEach(link => {
+        if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+        });
+        // document.getElementById("scrollToSoiree").addEventListener("click", () => {
+        //     const section = document.getElementById("soiree30");
+        //     if (section) {
+        //     section.scrollIntoView({ behavior: "smooth" });
+        // }
+        // });
+    });
+</script>
+
+</body>
+</html>

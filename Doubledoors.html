@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Double Doors Studios - A creative hub for artists, filmmakers, and digital creators in West Africa." />
+    <meta name="keywords" content="Double Doors Studios, creative hub, West Africa, artists, filmmakers, digital creators, studios, residency, performance spaces, immersive studios" />
+    <title>Doubledoors Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  </head>
+  <body class="bg-white min-h-screen text-black mx-[1rem] md:mx-0">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b border-white/20 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+        
+          <!-- Left side: Hamburger + Logo -->
+          <div class="flex items-center space-x-4">
+            <button id="hamburgerBtn" class="text-red-500 hover:text-amber-400 focus:outline-none z-30">
+              <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+            <div class="flex items-center space-x-2">
+              <img src="assets/dd" alt="" class="">
+              <span class="text-2xl font-bold text-black">Doubledoors Studios</span>
+            </div>
+          </div>
+
+          <!-- Desktop links -->
+          <div class="hidden md:flex space-x-8">
+            <a href="#Listings" class="text-black/70 hover:text-red-500 transition-colors">Listings</a>
+            <a href="#gallery" class="text-black/70 hover:text-red-500 transition-colors">Gallery</a>
+            <a href="#contact">
+              <button class="bg-gradient-to-r from-red-600 to-amber-500 text-black px-6 py-2 rounded-lg hover:opacity-90 transition-colors font-medium">
+                Contact for booking
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Slide-out Drawer -->
+    <div id="menuDrawer" class="fixed inset-0 z-20 hidden">
+      <div id="menuOverlay" class="absolute inset-0 bg-white/70 opacity-0 transition-opacity"></div>
+      <div id="menuPanel" class="absolute left-0 top-0 h-full w-72 bg-stone-100 transform -translate-x-full transition-transform duration-300 py-10 px-6 flex flex-col items-start space-y-6 text-xl text-black/80">
+        <button id="closeDrawer" class="self-end text-red-400 hover:text-amber-500">
+          <i data-lucide="x" class="w-7 h-7"></i>
+        </button>
+        <img class="h-28 mb-6" src="assets/logo.png" alt="RedHot Group Logo">
+        <ul class="space-y-6">
+          <li><a href="index.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">Home</a></li>
+          <li><a href="RedhotConcept.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">RedhotConcepts</a></li>
+          <li><a href="Doubledoors.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">Double Doors Studios</a></li>
+          <li><a href="Oseal.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">Oseal</a></li>
+          <li><a href="Oyep.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">OYEP</a></li>
+          <li><a href="https://www.teffest.com/" class="hover:text-red-500 border-b border-gray-200 hover:underline">TEFFEST</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mx-[1rem] md:mx-0">
+      <!-- Hero Section -->
+      <section class="relative max-h-screen h-full mt-[5rem]" id="hero">
+
+        <div class="w-full px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-6">
+          <div class=" flex md:flex-col gap-3 justify-center md:min-h-screen lg:w-[50%]">
+            <div class="lg:flex lg:flex-col gap-6">
+              <h1 class="text-3xl text-center md:text-6xl font-bold text-black mb-6 leading-tight">
+                LUXURY REAL ESTATE
+                <span class="block text-red-500">FILMING</span>
+                <span class="block text-gray-400">PREMIUM LOCATIONS</span>
+              </h1>
+              <p class="text-lg text-black/80">Discover the finest filming locations tailored for luxury projects.</p>
+              <div class="flex justify-between md:justify-center mt-4">
+                <button id="openContact" class="bg-red-600 md:w-1/4 text-white px-6 py-2 rounded-lg hover:opacity-90 transition-colors font-medium">
+                  Contact for booking
+                </button>
+                <button class="ml-4 md:w-1/4 border border-amber-500 hover:bg-amber-500 text-black px-6 py-2 rounded-lg hover:opacity-90 transition-colors font-medium">
+                  spaces
+                </button> 
+              </div>
+            </div>
+            <div class="md:gap-4 mt-8 hidden md:flex">
+              <div>
+                <img src="assets/dd-1.webp" alt="Doubledoors" class="w-full h-[300px] object-cover overflow-hidden rounded-3xl">
+              </div>
+              <div class="bg-gray-200 p-4 rounded-lg text-lg text-black flex flex-col gap-4 justify-center">
+                <!-- <p>concept <span class="text-white">Locations</span></p> -->
+
+                <h4 class="text-xl font-bold text-black">CONCEPT</h4>
+                <!-- <h4 class="text-lg text-black/80">LOCATIONS</h4> -->
+                <p class="text-black/80">Explore our unique concept locations designed for high-end productions.</p>
+                <p class="text-black/80">lekki phase 1, Lagos <span class="text-red-500">Nigeria</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-3xl w-[50%]  h-[50vh] hidden lg:block">
+            <img src="assets/dd-3.webp" alt="Doubledoors" class="w-full h-[800px] object-cover overflow-hidden rounded-3xl">
+          </div>
+        </div>
+
+      </section>
+
+      <section id="gallery" class="py-20 w-full max-w-7xl mx-auto">
+        <div>
+          <h2 class="text-center text-5xl font-bold bg-stone-200 py-6 text-black mb-4">Gallery</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+          <img src="assets/dd-2.webp" alt="Doubledoors" class="w-full h-[450px] object-cover overflow-hidden rounded-3xl">
+          <img src="assets/dd-4.webp" alt="Doubledoors" class="w-full h-[450px] object-cover overflow-hidden rounded-3xl">
+          <img src="assets/dd-5.webp" alt="Doubledoors" class="w-full h-[450px] object-cover overflow-hidden rounded-3xl">
+          <img src="assets/dd-1.webp" alt="Doubledoors" class="w-full h-[450px] object-cover overflow-hidden rounded-3xl">
+        </div>
+      </section>
+
+
+      
+
+      <!-- Services -->
+      <section id="Listings" class="py-20 w-full max-w-7xl mx-auto flex flex-col gap-8">
+        <div>
+          <h2 class="text-center text-5xl font-bold bg-stone-200 py-6 text-black mb-4">Available Now</h2>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 mx-auto px-6 md:px-12 bg-stone-300 rounded-tl-[50px] p-10 overflow-hidden rounded-br-[50px]">
+          <div class="md:w-[50%]"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Service 1"></div>
+          <div class="md:w-[50%] flex flex-col gap-4 justify-end">
+            <h3 class="text-3xl md:text-5xl font-bold">Deluxe Residence</h3>
+            <p class="text-lg text-italic">Experience the epitome of luxury living in our Deluxe Residence.</p>
+            <div class="">
+              <p class="text-black/80 text-[20px]">Swimming pool</p>
+              <p class="text-black/80 text-[20px]">Private gym</p>
+              <p class="text-black/80 text-[20px]">Home theater</p>
+              <p class="text-black/80 text-[20px]">Smart home technology</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 mx-auto px-6 md:px-12 bg-stone-300 rounded-tl-[50px] p-10 overflow-hidden rounded-br-[50px]">
+          <div class="md:w-[50%]"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Service 1"></div>
+          <div class="md:w-[50%] flex flex-col gap-4 justify-end">
+            <h3 class="text-3xl md:text-5xl font-bold">Deluxe Residence</h3>
+            <p class="text-lg text-italic">Experience the epitome of luxury living in our Deluxe Residence.</p>
+            <div class="">
+              <p class="text-black/80 text-[20px]">Swimming pool</p>
+              <p class="text-black/80 text-[20px]">Private gym</p>
+              <p class="text-black/80 text-[20px]">Home theater</p>
+              <p class="text-black/80 text-[20px]">Smart home technology</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 mx-auto px-6 md:px-12 bg-stone-300 rounded-tl-[50px] p-10 overflow-hidden rounded-br-[50px]">
+          <div class="md:w-[50%]"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Service 1"></div>
+          <div class="md:w-[50%] flex flex-col gap-4 justify-end">
+            <h3 class="text-3xl md:text-5xl font-bold">Deluxe Residence</h3>
+            <p class="text-lg text-italic">Experience the epitome of luxury living in our Deluxe Residence.</p>
+            <div class="">
+              <p class="text-black/80 text-[20px]">Swimming pool</p>
+              <p class="text-black/80 text-[20px]">Private gym</p>
+              <p class="text-black/80 text-[20px]">Home theater</p>
+              <p class="text-black/80 text-[20px]">Smart home technology</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+   
+    <!-- Footer -->
+    <footer class="bg-[#1e1e1e] text-[#e9d7c3] py-10">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row justify-around items-center gap-2 md:gap-0">                        
+          <!-- Logo & Tagline -->
+          <div id="contact" class="text-center md:text-left">
+            <p class="text-center font-bold">CONTACT US</p>
+            <p><a href="mailto:info@redhotgroup.com" class="text-stone-500 hover:text-stone-300">info@redhotgroup.com</a></p>
+          </div>
+          <!-- Social Media Icons -->
+            
+        </div>
+        <hr class="my-4 border-stone-600">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div>
+            <p class="text-sm">Follow us on:</p>
+            <div class="flex justify-start space-x-4">
+              <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+          </div>
+          <div class="mt-8 text-center text-sm text-stone-500">
+              © 2025 RedHot Group. All rights reserved.
+          </div>
+          <div>
+            <img src="assets/logo.png" class="h-20 p-0" alt="RedHot Logo">
+          </div>
+        </div>                    
+      </div>
+  </footer> 
+
+    <!-- JS -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const menuDrawer = document.getElementById("menuDrawer");
+      const menuOverlay = document.getElementById("menuOverlay");
+      const menuPanel = document.getElementById("menuPanel");
+      const closeDrawer = document.getElementById("closeDrawer");
+
+      function openDrawer() {
+        menuDrawer.classList.remove("hidden");
+        setTimeout(() => {
+          menuOverlay.classList.remove("opacity-0");
+          menuPanel.classList.remove("-translate-x-full");
+        }, 10);
+      }
+      function closeDrawerFn() {
+        menuOverlay.classList.add("opacity-0");
+        menuPanel.classList.add("-translate-x-full");
+        setTimeout(() => {
+          menuDrawer.classList.add("hidden");
+        }, 300);
+      }
+      hamburgerBtn.addEventListener("click", openDrawer);
+      closeDrawer.addEventListener("click", closeDrawerFn);
+      menuOverlay.addEventListener("click", closeDrawerFn);
+
+      lucide.createIcons();
+
+      // Hero
+      const heroImages = [
+        "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/2883049/pexels-photo-2883049.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      ];
+      let currentHero = 0;
+      const heroImageEl = document.getElementById("heroImage");
+      const heroIndicators = document.getElementById("heroIndicators");
+
+      function renderHero() {
+        heroImageEl.src = heroImages[currentHero];
+        heroIndicators.innerHTML = heroImages.map((_, i) => 
+          `<button onclick="setHero(${i})" class="w-3 h-3 rounded-full ${i===currentHero?'bg-amber-400':'bg-white/50'}"></button>`
+        ).join("");
+      }
+      window.setHero = (i) => { currentHero=i; renderHero(); };
+
+      document.getElementById("nextHero").addEventListener("click", () => {
+        currentHero=(currentHero+1)%heroImages.length;
+        renderHero();
+      });
+      document.getElementById("prevHero").addEventListener("click", () => {
+        currentHero=(currentHero-1+heroImages.length)%heroImages.length;
+        renderHero();
+      });
+      renderHero();
+
+      // Contact Modal
+      const modal=document.getElementById("contactModal");
+      document.getElementById("openContact").onclick=()=>modal.classList.remove("hidden");
+      document.getElementById("bookNow").onclick=()=>modal.classList.remove("hidden");
+      document.getElementById("closeContact").onclick=()=>modal.classList.add("hidden");
+
+      // Properties
+      const featuredProperties = [
+        {id:1,title:"Modern Downtown Penthouse",location:"Manhattan, NYC",category:"luxury",images:["https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800"],price:"$2,500/day",sqft:"2,400 sq ft"},
+        {id:2,title:"Victorian Manor Estate",location:"Beverly Hills, CA",category:"period",images:["https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800"],price:"$4,200/day",sqft:"8,500 sq ft"},
+        {id:3,title:"Industrial Warehouse Loft",location:"Brooklyn, NYC",category:"industrial",images:["https://images.pexels.com/photos/2883049/pexels-photo-2883049.jpeg?auto=compress&cs=tinysrgb&w=800"],price:"$1,800/day",sqft:"5,200 sq ft"},
+        {id:4,title:"Beachfront Villa",location:"Malibu, CA",category:"luxury",images:["https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=800"],price:"$3,800/day",sqft:"4,800 sq ft"},
+      ];
+
+      let selectedCategory = "all";
+      const grid = document.getElementById("propertiesGrid");
+
+      function renderProps(){
+        const props = selectedCategory === "all" 
+          ? featuredProperties 
+          : featuredProperties.filter(p => p.category === selectedCategory);
+
+        grid.innerHTML = props.map(p => `
+          <div class="group relative overflow-hidden rounded-2xl bg-zinc-900">
+            <div class="aspect-[4/3] relative">
+              <img src="${p.images[0]}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+            </div>
+            <div class="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-red-500 text-white px-3 py-1 rounded-full font-bold text-sm">${p.price}</div>
+            <div class="p-6 relative z-10">
+              <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-amber-400 transition-colors">${p.title}</h3>
+              <div class="flex items-center text-white/60 gap-2 mb-3">
+                <i data-lucide="map-pin" class="w-4 h-4"></i> ${p.location}
+              </div>
+              <div class="flex items-center text-white/60 gap-2 mb-3">
+                <i data-lucide="ruler" class="w-4 h-4"></i> ${p.sqft}
+              </div>
+            </div>
+          </div>
+        `).join("");
+        lucide.createIcons();
+      }
+
+      // Category button underline toggle
+      document.querySelectorAll(".category-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          // hide all underlines
+          document.querySelectorAll(".category-btn .underline-span")
+            .forEach(span => span.classList.add("scale-x-0"));
+          // show underline for clicked button
+          btn.querySelector(".underline-span").classList.remove("scale-x-0");
+          // update category
+          selectedCategory = btn.dataset.category;
+          renderProps();
+        });
+      });
+
+      // Initial render
+      renderProps();
+      // Show underline on "All" button initially
+      document.querySelector('.category-btn[data-category="all"] .underline-span')
+        .classList.remove("scale-x-0");
+
+      // Gallery
+      const galleryImgs=[...heroImages,...featuredProperties.flatMap(p=>p.images)];
+      const gallery=document.getElementById("galleryGrid");
+      gallery.innerHTML=galleryImgs.map(src=>`<div class="overflow-hidden rounded-xl group"><img src="${src}" class="w-full transition-transform duration-700 group-hover:scale-110"></div>`).join("");
+    });
+    </script>
+  </body>
+</html>

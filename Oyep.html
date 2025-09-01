@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouthBuild Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .mobile-menu { display: none; }
+        .mobile-menu.active { display: block; }
+
+        .impact-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .impact-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+            z-index: 1;
+        }
+        
+        .impact-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.5px);
+            height: 100px;
+        }
+        
+        .impact-divider .shape-fill {
+            fill: #FFFFFF;
+        }
+        
+        .shapedividers_com-8296{
+        overflow:hidden;
+        position:relative;
+        }
+        .shapedividers_com-8296::before{ 
+        content:'';
+        font-family:'shape divider from ShapeDividers.com';
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        background-repeat: no-repeat;
+        bottom: -0.1vw;
+        left: -0.1vw;
+        right: -0.1vw;
+        top: -0.1vw; 
+        background-size: 241% 365px;
+        background-position: 50% 100%;  background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M35.28 1.67c-3.07-.55-9.27.41-16.15 0-6.87-.4-13.74-.58-19.13.1v.4h35.28z" fill="%23004ac2"/><path d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z" opacity=".5" fill="%23004ac2"/><path d="M35.28.31c-2.57.84-7.68.3-11.8.43-4.1.12-6.85.61-9.57.28C11.18.69 8.3-.16 5.3.02 2.3.22.57.85 0 .87v1.2h35.28z" opacity=".2" fill="%23004ac2"/></svg>'); 
+        }
+
+        @media (min-width:2100px){
+        .shapedividers_com-8296::before{
+        background-size: 241% calc(2vw + 361px);
+        }
+        }
+        
+
+        /* Slideshow styles */
+        .services-slideshow {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .services-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .services-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.15);
+            z-index: 5;
+        }
+
+        #menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 16rem; /* w-64 */
+            background-color: #787776; /* dark background for contrast */
+            color: #f5f5f4; /* light text */
+            transform: translateX(-100%); /* start hidden */
+            transition: transform 0.3s ease-in-out;
+            z-index: 60;
+        }
+
+        #menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 50;
+        }
+
+        /* Drawer itself */
+        #menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 16rem; /* w-64 */
+        }
+       
+        #menu-overlay.active {
+        display: block;
+        }
+        @media (min-width: 768px) {
+        #menu {
+            width: 20rem; /* md:w-80 */
+        }
+        }
+
+        /* Active states */
+        #menu.active {
+        transform: translateX(0);
+        }
+
+        #menu-overlay.active {
+        display: block;
+        }
+    </style>
+    
+    </head>
+    <body class="min-h-screen bg-white">
+
+    <!-- Navigation -->
+    <nav id="tranpoint" class="flex w-[80%] md:w-[60%] items-center justify-between px-6 py-4 bg-white">
+    <!-- Logo -->
+
+        <!-- Menu Button (works on all screens) -->
+        <div>
+            <button onclick="openMenu()" class="text-gray-700 hover:text-blue-600">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" 
+                    viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" 
+                        d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+           </button>  
+        </div>
+
+        <div class="flex items-center space-x-2">
+           <svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"> <path d="M17 20h5v-2a4 4 0 0 0-5-4M9 20H4v-2a4 4 0 0 1 5-4m0 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm8 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/> </svg> <div class="flex flex-col gap-1"> <span class="ml-2 text-xl font-bold text-gray-900 text-center tracking-[12px]">OYEP </span> 
+            <span class="text-[8px]">OMOTOLA YOUTH EMPOWERMENT PROGRAMME</span> 
+        </div>
+    </nav>
+
+  <!-- Drawer Overlay -->
+  <div id="menu-overlay" onclick="closeMenu()"></div>
+
+  <!-- Drawer Menu -->
+    <ul id="menu" class="flex flex-col space-y-6 text-lg p-8 relative">
+        <!-- Close Button -->
+        <li class="absolute top-4 right-4">
+            <button onclick="closeMenu()" class="text-rose-200 hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" 
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </li>
+
+        <!-- Logo -->
+        <li class="mt-10">
+        <img class="h-20" src="assets/logo.png" alt="RedHot Group Logo">
+        </li>
+
+        <!-- Links -->
+        <li><a href="index.html" class="drawer-link">Home</a></li>
+        <li><a href="RedhotConcept.html" class="drawer-link">RedhotConcepts</a></li>
+        <li><a href="Doubledoors.html" class="drawer-link">Double Doors Studios</a></li>
+        <li><a href="Oseal.html" class="drawer-link">Oseal</a></li>
+        <li><a href="Oyep.html" class="drawer-link">OYEP</a></li>
+        <li><a href="https://www.teffest.com/" class="drawer-link">TEFFEST</a></li>
+  </ul>
+
+    <!-- Hero -->
+    <section id="home" class="pt-16 bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class=" flex flex-col justify-center lg:grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 flex flex-col justify-center lg:justify-start text-center lg:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                        Building Our Nation Through
+                        <span class="text-blue-600 block">Youth Empowerment</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+                        Empowering young adults to create lasting change in their communities through advocacy, 
+                        essential services, and support for those who need it most.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all flex items-center justify-center">
+                        Join Our Mission
+                        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                        </svg>
+                        </a>
+                        <a href="#about" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all">
+                        Learn More
+                        </a>
+                    </div>
+                </div>
+                <!-- HERO section right side with blob image -->
+                <div class="relative w-full h-[500px] drop-shadow-2xl flex items-center justify-center">
+                    <img src="assets/oyep-services/1.png" alt="" class="h-[500px] w-[500px] lg:h-full lg:w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-10 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Mission for Change</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            We believe in the power of young adults to transform communities and build a stronger nation. 
+            Through advocacy, direct service, and community support, we're creating lasting impact where it matters most.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center p-8 rounded-2xl bg-blue-50 hover:bg-blue-100 transition-colors">
+                <div class="mb-4">
+                    <img src="assets/oyep-services/img11.jpeg" alt="Youth Advocacy">
+                </div>
+                <svg class="h-12 w-12 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M17 20h5v-2a4 4 0 0 0-5-4M9 20H4v-2a4 4 0 0 1 5-4m0 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm8 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                </svg>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Youth Advocacy</h3>
+                <p class="text-gray-600">Empowering young voices to advocate for policy changes and community improvements that matter.</p>
+            </div>
+            <div class="text-center p-8 rounded-2xl bg-green-50 hover:bg-green-100 transition-colors">
+                <div class="mb-4">
+                    <img src="assets/oyep-services/img2.jpeg" alt="Community Care">
+                </div>
+                <svg class="h-12 w-12 text-green-600 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/>
+                </svg>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Community Care</h3>
+                <p class="text-gray-600">Providing essential services and support to families, especially widows and vulnerable community members.</p>
+            </div>
+            <div class="text-center p-8 rounded-2xl bg-orange-50 hover:bg-orange-100 transition-colors">
+                <div class="mb-4">
+                    <img src="assets/oyep-services/img13.jpeg" alt="Nation Building">
+                </div>
+                <svg class="h-12 w-12 text-orange-600 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 9.75L12 4l9 5.75v9.25a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                </svg>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Nation Building</h3>
+                <p class="text-gray-600">Creating stronger communities through grassroots initiatives that build lasting positive change.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 relative">
+        <!-- Slideshow Background -->
+        <div class="services-slideshow absolute top-0 left-0 w-full h-full">
+            <!-- These would be replaced with your actual images -->
+            <div class="slide active" style="background-image: url('assets/oyep-services/img1.jpeg')"></div>
+            <div class="slide" style="background-image: url('assets/oyep-services/img2.jpeg')"></div>
+            <div class="slide" style="background-image: url('assets/oyep-services/img3.jpeg')"></div>
+            <div class="slide" style="background-image: url('assets/oyep-services/img4.jpeg')"></div>
+        </div>
+        
+        <!-- Overlay to improve text readability -->
+        <div class="services-overlay"></div>
+        
+        <!-- Content -->
+        <div class="services-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Community Services</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                We provide convenient, accessible services designed to meet the immediate needs of our community members while building long-term support systems.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                <svg class="h-12 w-12 text-blue-600 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 12l2-2h3l2 2h4l2-2h3l2 2M5 12v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/>
+                </svg>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Give and Let Give</h3>
+                <p class="text-gray-600 mb-4">A community-driven initiative encouraging the donation of food, clothing, and essentials to those in need.</p>
+                <div class="text-sm text-blue-600 font-medium"></div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                <svg class="h-12 w-12 text-green-600 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M20.5 9.5a4.5 4.5 0 0 0-9 0V10H7l-2 7h14l-2-7h-4v-.5"/>
+                </svg>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">20 Widows Makeover</h3>
+                <p class="text-gray-600 mb-4">Makeovers and pampering sessions for widows to uplift their spirits, Comprehensive support providing financial help, counseling, and aid for widows and families.</p>
+                <div class="text-sm text-green-600 font-medium"></div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-1">
+                <svg class="h-12 w-12 text-orange-600 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/>
+                </svg>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Youth Empowerment</h3>
+                <p class="text-gray-600 mb-4">Programs and workshops aimed at equipping young minds with the skills and confidence they need to succeed.</p>
+                <div class="text-sm text-orange-600 font-medium"></div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all">Access Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact -->
+   <section id="impact" class="impact-section pt-20 pb-32 bg-blue-600 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Community Impact</h2>
+                <p class="text-lg text-blue-100 max-w-3xl mx-auto">Together, we're making a measurable difference in our community.</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                <div class="text-4xl md:text-5xl font-bold mb-2">2,500+</div>
+                <div class="text-blue-100">Families Served</div>
+                </div>
+                <div class="text-center">
+                <div class="text-4xl md:text-5xl font-bold mb-2">150+</div>
+                <div class="text-blue-100">Active Volunteers</div>
+                </div>
+                <div class="text-center">
+                <div class="text-4xl md:text-5xl font-bold mb-2">75</div>
+                <div class="text-blue-100">Widows Supported</div>
+                </div>
+                <div class="text-center">
+                <div class="text-4xl md:text-5xl font-bold mb-2">5</div>
+                <div class="text-blue-100">Years of Service</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SVG Divider at the bottom of the impact section -->
+        <div class="impact-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Get Involved Today</h2>
+            <p class="text-lg text-gray-600 mb-8">
+                Join us in building a stronger community. Volunteer, access our services, or partner with us.
+            </p>
+            <div class="space-y-6">
+                <div class="flex items-center">
+                <svg class="h-6 w-6 text-blue-600 mr-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72c.12.81.3 1.6.55 2.35a2 2 0 0 1-.45 2.11L10.1 10.9a16 16 0 0 0 6 6l1.72-1.09a2 2 0 0 1 2.11-.45c.75.25 1.54.43 2.35.55a2 2 0 0 1 1.72 2z"/>
+                </svg>
+                <span class="text-gray-700">+1 (555) 123-4567</span>
+                </div>
+                <div class="flex items-center">
+                <svg class="h-6 w-6 text-blue-600 mr-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M4 4h16v16H4V4zm16 4l-8 5-8-5"/>
+                </svg>
+                <span class="text-gray-700">contact@youthbuild.org</span>
+                </div>
+                <div class="flex items-center">
+                <svg class="h-6 w-6 text-blue-600 mr-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M17.657 16.657L13.414 12l4.243-4.243m-11.314 0L10.586 12l-4.243 4.243"/>
+                </svg>
+                <span class="text-gray-700">123 Community Street, City, State</span>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-12">            
+            <div class="flex flex-col space-y-2 justify-center items-center">
+                <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-white">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.478-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898v-2.89h2.54V9.845c0-2.507 1.493-3.89 3.777-3.89 1.095 0 2.238.195 2.238.195v2.465h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-white">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-white">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 1 1-12 0 6 6 0 0 1 12 0zm2 13v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+            © 2025 OYEP Foundation. All rights reserved.
+        </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+
+    </body>
+</html>
+
+
