@@ -8,6 +8,8 @@
     <meta name="author" content="RedHot Group" />
     <title>OSEAL Institute</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,72 +22,125 @@
         .animate-on-scroll { opacity: 0; }
     </style>
     </head>
-    <body class="bg-[url('assets/studio-bg.webp')] bg-center bg-cover bg-no-repeat bg-fixed text-[#F0E5CF] font-['Raleway']">
-        <div class="bg-black/70 min-h-screen px-4">
-            <nav class="bg-stone-400/20 p-2 sticky top-0 z-10">
+    <body class="bg-white text-black font-['Raleway']">
+        <div class=" min-h-screen">
+           <nav id="tranpoint" class="p-2 fixed top-0 left-0 w-full z-50">
                 <div class="container mx-auto flex items-center justify-between">
-                    <img src="assets/Screenshot_2025-07-11_163422-removebg-preview.png" class="h-12 p-0 flex justify-end" alt="RedHot Group Logo">
-                    <button id="menu-toggle" class="text-rose-200 hover:text-rose-500 md:hidden focus:outline-none">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    <!-- Hamburger -->
+                    <button id="menu-toggle" class="text-stone-900 hover:text-rose-500 focus:outline-none z-30">
+                        <svg id="icon-hamburger" class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <svg id="icon-close" class="w-8 h-8 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                         </svg>
                     </button>
 
-                    <ul id="menu" class="transition-all duration-300 hidden flex-col md:flex md:flex-row md:space-x-4 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-stone-700/90 md:bg-transparent text-center md:text-right z-20">
-                        <li><a aria-label="Home" href="index.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">Home</a></li>
-                        <li><a aria-label="Redhot Concept" href="RedhotConcept.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">RedhotConcept</a></li>
-                        <li><a aria-label="Double Doors Studios" href="Doubledoors.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">Double Doors Studios</a></li>
-                        <li><a aria-label="TEFFEST" href="Teffest.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">TEFFEST</a></li>
-                        <li><a aria-label="OSEAL" href="Oseal.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">Oseal</a></li>
-                        <li><a aria-label="Contact" href="#contact" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">Contact</a></li>
+                    <a class="pl-14" href="index.html">
+                        <img src="assets/logo.png" class="h-20" alt="RedHot Group Logo">
+                    </a>
+                    <!-- Fullscreen Menu -->
+                    <ul id="menu" class="fixed top-0 left-0 w-[200px] h-full bg-stone-900 bg-opacity-95 text-stone-100
+                            transform -translate-x-full transition-transform duration-300 ease-in-out
+                            flex flex-col space-y-6 text-lg py-10 px-4 z-20"
+                        >
+                        <li><img class="h-20 mx-auto" src="assets/logo.png" alt="RedHot Group Logo"></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="RedhotConcept.html">RedhotConcepts</a></li>
+                        <li><a href="Doubledoors.html">Double Doors Studios</a></li>
+                        <li><a href="Oseal.html">Oseal</a></li>
+                        <li><a href="Oyep.html">OYEP</a></li>
+                        <li><a href="https://www.teffest.com/">TEFFEST</a></li>
                     </ul>
+
                 </div>
             </nav>
 
             <main>
-                <!-- Hero Section -->
-                <section class="text-center py-16 max-w-4xl mx-auto animate-fade-in">
-                    <h1 class="text-4xl sm:text-5xl font-bold text-rose-200 mb-6">OSEAL – A Space to Grow, Learn, and Express Yourself</h1>
-                    <p class="text-lg text-stone-100 leading-relaxed">
-                        Not everyone knows exactly where they’re headed — and that’s okay. At OSEAL (Omotola Skills, Entertainment & Lifestyle Institute), we’ve created a place for people to explore their interests, build valuable skills, and grow in confidence.
-                        <br><br>
-                        Whether you're a young person just discovering your strengths, a creative looking to refine your talent, or someone seeking a fresh start, OSEAL welcomes you.
-                        <br><br>
-                        Our programs are designed to meet you where you are — no pressure, no pretense — just real support, learning, and guidance in a space that celebrates individuality and growth.
+               <!-- Hero Section -->
+                <section class="relative w-full h-screen text-center overflow-hidden">
+                
+                    <!-- Subheading -->
+                    <p class="text-gray-600 text-sm mt-12 tracking-[6px] uppercase z-20">
+                        Omotola Skills, Entertainment and Lifestyle Institute
                     </p>
+                    
+                    <!-- Huge Background Text -->
+                    <h1 class="absolute text-center w-full text-[400px] font-bold text-gray-300/40 tracking-widest leading-none select-none">
+                        OSEAL
+                    </h1>
+
+                    <!-- Main Hero Content -->
+                    <div class="relative z-20 flex flex-col md:flex-row items-center justify-center gap-8 max-w-6xl mx-auto px-6 mt-12 md:mt-[300px]">
+                        
+                        <!-- Image Side -->
+                        <div class="w-64 h-64 md:w-80 md:h-80 relative ">
+                            <img src="assets/OSEAL/Untitled design (1).png" alt="OSEAL Student" 
+                            class="object-cover w-full h-full">
+                        </div>
+
+                            <!-- Text Side -->
+                        <div class="max-w-3xl text-center md:text-left tracking-widest leading-none mt-25">
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 leading-snug">
+                                THE HOME OF <span class="text-gray-900">SELF ENTERTAINMENT DEVELOPMENT</span>
+                            </h2>
+                            <p class="mt-4 text-gray-600 leading-relaxed">
+                                We blend real-world entertainment training with personal development and lifestyle coaching — 
+                                so you’re not just learning a skill, you’re becoming your best self.
+                            </p>
+                        </div>
+                    </div>
                 </section>
 
+
                     <!-- What Is OSEAL -->
-                <section class="bg-white/10 p-8 rounded-lg border border-white/20 max-w-6xl mx-auto space-y-6">
-                    <h2 class="text-3xl font-bold text-rose-400">What Is OSEAL?</h2>
-                    <p>
-                        OSEAL stands for <strong>Omotola Skills, Entertainment & Lifestyle Institute</strong> — a vibrant, inclusive learning space that empowers people of all ages and backgrounds to discover and develop their natural gifts.
-                    </p>
-                    <p>
-                        We blend <strong>real-world entertainment training</strong> with <strong>personal development and lifestyle coaching</strong>, so you’re not just learning a skill — you’re becoming your best self.
-                    </p>
+                <section class=" p-8 rounded-lg border border-white/20 max-w-6xl mx-auto space-y-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-6">
+                        <div>
+                            <h2 class="text-start text-3xl font-bold text-black">AT THE INSTITUTE</h2>
+                            <p >COURSES CURATED FOR YOU BY SEASONED PROFESSIONALS TO GIVE YOU THE BEST OF YOU</p>  
+                        </div>
+                        <div>
+                            <button class="border border-black hover:border-rose-500 text-black hover:text-white hover:bg-rose-500 py-2 px-4 rounded-lg">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-12">
+                        <div>
+                            <img src="assets/OSEAL/2.png" class="rounded-3xl h-64" alt="">
+                        </div>
+                        <div>
+                            <img src="assets/OSEAL/2.png" class="rounded-3xl h-64" alt="">
+                        </div>
+                        <div>
+                            <img src="assets/OSEAL/2.png" class="rounded-3xl h-64" alt="">
+                        </div>
+                        <div>
+                            <img src="assets/OSEAL/2.png" class="rounded-3xl h-64" alt="">
+                        </div>
+                    </div>
+                    
                 </section>
 
                     <!-- What Makes OSEAL Different -->
                 <section class="max-w-6xl mx-auto mt-12 grid md:grid-cols-3 gap-6">
                     <div class="bg-white/10 p-6 rounded-lg border border-white/20">
-                        <h3 class="text-xl font-semibold text-rose-300">We empower individuals</h3>
+                        <h3 class="text-xl font-bold text-gray-700">We empower individuals</h3>
                         <p>Whether you want to sing, act, speak, create content, or just live more confidently — OSEAL equips you.</p>
                     </div>
                     <div class="bg-white/10 p-6 rounded-lg border border-white/20">
-                        <h3 class="text-xl font-semibold text-rose-300">We serve all age groups</h3>
+                        <h3 class="text-xl font-bold text-gray-700">We serve all age groups</h3>
                         <p>From kids to adults, beginners to pros — it’s never too early or too late to grow.</p>
                     </div>
                     <div class="bg-white/10 p-6 rounded-lg border border-white/20">
-                        <h3 class="text-xl font-semibold text-rose-300">We build people, not just skills</h3>
+                        <h3 class="text-xl font-bold text-gray-700">We build people, not just skills</h3>
                         <p>Confidence, presence, and purpose matter as much as training.</p>
                     </div>
                 </section>
-
+                
                     <!-- Programs -->
                 <section class="max-w-6xl mx-auto mt-16 space-y-6">
                     <h2 class="text-3xl font-bold text-rose-400">Programs Tailored Just for You</h2>
-                    <ul class="list-disc pl-5 text-lg text-stone-100 space-y-2">
+                    <ul class="list-disc pl-5 text-lg space-y-2">
                         <li><strong>Creative Skills:</strong> Acting, music, hosting, storytelling, content creation.</li>
                         <li><strong>Lifestyle Growth:</strong> Confidence, etiquette, body language, branding.</li>
                         <li><strong>Mentorship:</strong> Guidance from industry pros, live events, and showcases.</li>
@@ -96,53 +151,52 @@
                     <!-- Movement CTA -->
                 <section class="text-center mt-20">
                     <h2 class="text-3xl text-rose-400 font-bold mb-4">This Is More Than a Program — It’s a Movement</h2>
-                    <p class="text-lg text-stone-100 max-w-3xl mx-auto mb-6">
-                        If you’ve ever said: <br /> “I think I have something special...”, <br /> “I want to feel more confident”, <br /> “I need guidance...” then <br> <strong>OSEAL is your next step.</strong>
-                    </p>
-                    <a aria-label="Join OSEAL" href="https://osealofficial.com" target="_blank" class="inline-block bg-rose-500 hover:bg-rose-600 text-white py-3 px-8 rounded-lg text-lg font-semibold transition">Join OSEAL Today</a>
-                </section>
+               </section>
 
                     <!-- Contact Form -->
-                <section id="contact" class="max-w-2xl mx-auto mt-20 mb-16 p-8 bg-white/10 rounded-xl border border-white/20">
-                    <h3 class="text-2xl font-semibold text-rose-300 mb-4">Contact Us</h3>
-                    <form class="space-y-4">
-                        <input type="text" placeholder="Full Name" class="w-full p-3 rounded bg-white/20 text-white placeholder-stone-200" required />
-                        <input type="email" placeholder="Email Address" class="w-full p-3 rounded bg-white/20 text-white placeholder-stone-200" required />
-                        <textarea placeholder="Your Message" rows="5" class="w-full p-3 rounded bg-white/20 text-white placeholder-stone-200" required></textarea>
-                        <button type="submit" aria-label="Send Message" class="bg-rose-500 hover:bg-rose-600 text-white font-semibold px-6 py-3 rounded transition">Send Message</button>
-                    </form>
+                <section id="contact" class=" w-full mt-20 mb-16 p-8">
+                    <div class="max-w-lg text-center md:text-left tracking-widest leading-none mt-25 mx-auto bg-gray-100 p-5">
+                        <h3 class="text-2xl font-semibold mb-4">Contact Us</h3>
+                        <form class="space-y-4 max-w-2xl mx-auto">
+                            <input type="text" placeholder="Full Name" class="w-full p-3 bg-gray-400 rounded placeholder-stone-340" required />
+                            <input type="email" placeholder="Email Address" class="w-full p-3 bg-gray-400 rounded placeholder-stone-340" required />
+                            <textarea placeholder="Your Message" rows="5" class="w-full p-3 bg-gray-400 rounded placeholder-stone-340" required></textarea>
+                            <button type="submit" aria-label="Send Message" class="bg-rose-500 hover:bg-rose-600 text-white font-semibold px-6 py-3 rounded transition">Send Message</button>
+                        </form>
+                    </div>
                 </section>
 
                     <!-- Footer -->
                 <footer class="bg-[#1e1e1e] text-[#e9d7c3] py-10">
                     <div class="container mx-auto px-6 md:px-12">
                         <div class="flex flex-col md:flex-row justify-around items-center gap-2 md:gap-0">                        
+                            <!-- Logo & Tagline -->
                             <div class="text-center md:text-left">
-                                <img src="assets/Screenshot_2025-07-11_163422-removebg-preview.png" class="h-12 mx-auto md:mx-0 mb-2" alt="RedHot Logo">
-                                <p class="text-sm">RedHot Group <br> Elevating Ideas, Talent & Entertainment</p>
+                                <p class="text-center font-bold">CONTACT US</p>
+                                <p><a href="mailto:info@redhotgroup.com" class="text-stone-500 hover:text-stone-300">info@redhotgroup.com</a></p>
                             </div>
-                            <div class="flex flex-col md:flex-row items-center gap-4">
-                                <a aria-label="Home" href="#" class="hover:text-rose-400 transition">Home</a> 
-                                <a aria-label="Redhot Concept" href="RedhotConcept.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">RedhotConcept</a>
-                                <a aria-label="Double Doors Studios" href="Doubledoors.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">Double Doors Studios</a>
-                                <a aria-label="TEFFEST" href="Teffest.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">TEFFEST</a>
-                                <a aria-label="OSEAL" href="Oseal.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">Oseal</a>
-                                <a aria-label="Contact" href="#contact" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">Contact</a>
-                            </div>
-                            <div class="flex gap-4">
-                                <a href="#" aria-label="Instagram" class="hover:text-rose-400 transition">
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.206.058 2.003.25 2.47.415a4.927 4.927 0 011.675 1.093 4.927 4.927 0 011.093 1.675c.165.467.357 1.264.415 2.47.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.058 1.206-.25 2.003-.415 2.47a4.927 4.927 0 01-1.093 1.675 4.927 4.927 0 01-1.675 1.093c-.467.165-1.264.357-2.47.415-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.206-.058-2.003-.25-2.47-.415a4.927 4.927 0 01-1.675-1.093 4.927 4.927 0 01-1.093-1.675c-.165-.467-.357-1.264-.415-2.47C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.058-1.206.25-2.003.415-2.47a4.927 4.927 0 011.093-1.675 4.927 4.927 0 011.675-1.093c.467-.165 1.264-.357 2.47-.415C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.332.015 7.053.072 5.775.129 4.833.296 4.053.61a6.87 6.87 0 00-2.49 1.64A6.87 6.87 0 00.61 4.053C.296 4.833.129 5.775.072 7.053.015 8.332 0 8.741 0 12c0 3.259.015 3.668.072 4.947.057 1.278.224 2.22.538 3 .315.78.738 1.446 1.362 2.07.624.624 1.29 1.047 2.07 1.362.78.314 1.722.481 3 .538 1.279.057 1.688.072 4.947.072s3.668-.015 4.947-.072c1.278-.057 2.22-.224 3-.538a6.87 6.87 0 002.07-1.362 6.87 6.87 0 001.362-2.07c.314-.78.481-1.722.538-3 .057-1.279.072-1.688.072-4.947s-.015-3.668-.072-4.947c-.057-1.278-.224-2.22-.538-3a6.87 6.87 0 00-1.362-2.07 6.87 6.87 0 00-2.07-1.362c-.78-.314-1.722-.481-3-.538C15.668.015 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
-                                </a>
-                                <a href="#" aria-label="Twitter" class="hover:text-rose-400 transition">
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.954 4.569a10 10 0 01-2.825.775A4.958 4.958 0 0023.337 3.1a10.1 10.1 0 01-3.127 1.184 4.92 4.92 0 00-8.379 4.482A13.978 13.978 0 011.671 3.15a4.822 4.822 0 001.523 6.573 4.902 4.902 0 01-2.229-.616v.06a4.936 4.936 0 003.946 4.827 4.902 4.902 0 01-2.224.084 4.937 4.937 0 004.604 3.417A9.867 9.867 0 010 19.54a13.951 13.951 0 007.548 2.209c9.057 0 14.01-7.5 14.01-14.004 0-.213-.006-.425-.017-.636a9.936 9.936 0 002.414-2.54z"/></svg>
-                                </a>
-                            </div>
+                            <!-- Social Media Icons -->
+                            
                         </div>
-                        <div class="mt-8 text-center text-sm text-stone-500">
-                            © 2025 RedHot Group. All rights reserved.
-                        </div>
+                        <hr class="my-4 border-stone-600">
+                        <div class="flex flex-col md:flex-row justify-between items-center">
+                            <div>
+                                <p class="text-sm">Follow us on:</p>
+                                <div class="flex justify-start space-x-4">
+                                    <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-facebook"></i></a>
+                                </div>
+                            </div>
+                            <div class="mt-8 text-center text-sm text-stone-500">
+                                © 2025 RedHot Group. All rights reserved.
+                            </div>
+                            <div>
+                                <img src="assets/logo.png" class="h-20 p-0" alt="RedHot Logo">
+                            </div>
+                        </div>                    
                     </div>
-                </footer>
+                </footer>       
             </main>
         </div>        
         <script src="index.js"></script>

@@ -1,183 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Double Doors Studios - A creative hub for artists, filmmakers, and digital creators in West Africa.">
-    <meta name="keywords" content="Double Doors Studios, creative hub, West Africa, artists, filmmakers, digital creators, studios, residency, performance spaces, immersive studios">
-    <meta name="author" content="RedHot Group">
-    <title>Double Doors Studios | RedHot Group</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Double Doors Studios - A creative hub for artists, filmmakers, and digital creators in West Africa." />
+    <meta name="keywords" content="Double Doors Studios, creative hub, West Africa, artists, filmmakers, digital creators, studios, residency, performance spaces, immersive studios" />
+    <title>Doubledoors Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  </head>
+  <body class="bg-white min-h-screen text-black mx-[1rem] md:mx-0">
 
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">   
-    <style>
-        @keyframes fadeInUp {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        }
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b border-white/20 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+        
+          <!-- Left side: Hamburger + Logo -->
+          <div class="flex items-center space-x-4">
+            <button id="hamburgerBtn" class="text-red-500 hover:text-amber-400 focus:outline-none z-30">
+              <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+            <div class="flex items-center space-x-2">
+              <img src="assets/dd" alt="" class="">
+              <span class="text-2xl font-bold text-black">Doubledoors Studios</span>
+            </div>
+          </div>
 
-        .animate-fade-in {
-        animation: fadeInUp 1s ease-out forwards;
-        }
+          <!-- Desktop links -->
+          <div class="hidden md:flex space-x-8">
+            <a href="#Listings" class="text-black/70 hover:text-red-500 transition-colors">Listings</a>
+            <a href="#gallery" class="text-black/70 hover:text-red-500 transition-colors">Gallery</a>
+            <a href="#contact">
+              <button class="bg-gradient-to-r from-red-600 to-amber-500 text-black px-6 py-2 rounded-lg hover:opacity-90 transition-colors font-medium">
+                Contact for booking
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-        .animate-on-scroll {
-        opacity: 0;
-        }
+    <!-- Slide-out Drawer -->
+    <div id="menuDrawer" class="fixed inset-0 z-20 hidden">
+      <div id="menuOverlay" class="absolute inset-0 bg-white/70 opacity-0 transition-opacity"></div>
+      <div id="menuPanel" class="absolute left-0 top-0 h-full w-72 bg-stone-100 transform -translate-x-full transition-transform duration-300 py-10 px-6 flex flex-col items-start space-y-6 text-xl text-black/80">
+        <button id="closeDrawer" class="self-end text-red-400 hover:text-amber-500">
+          <i data-lucide="x" class="w-7 h-7"></i>
+        </button>
+        <img class="h-28 mb-6" src="assets/logo.png" alt="RedHot Group Logo">
+        <ul class="space-y-6">
+          <li><a href="index.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">Home</a></li>
+          <li><a href="RedhotConcept.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">RedhotConcepts</a></li>
+          <li><a href="Doubledoors.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">Double Doors Studios</a></li>
+          <li><a href="Oseal.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">Oseal</a></li>
+          <li><a href="Oyep.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">OYEP</a></li>
+          <li><a href="https://www.teffest.com/" class="hover:text-red-500 border-b border-gray-200 hover:underline">TEFFEST</a></li>
+        </ul>
+      </div>
+    </div>
 
-        .fade-in-delay-100 { animation-delay: 0.1s; animation: fadeInUp 0.8s ease-out forwards; }
-        .fade-in-delay-200 { animation-delay: 0.2s; animation: fadeInUp 0.8s ease-out forwards; }
-        .fade-in-delay-300 { animation-delay: 0.3s; animation: fadeInUp 0.8s ease-out forwards; }
-        .fade-in-delay-400 { animation-delay: 0.4s; animation: fadeInUp 0.8s ease-out forwards; }
-        .fade-in-delay-500 { animation-delay: 0.5s; animation: fadeInUp 0.8s ease-out forwards; }
-        .fade-in-delay-600 { animation-delay: 0.6s; animation: fadeInUp 0.8s ease-out forwards; }
-        .fade-in-delay-700 { animation-delay: 0.7s; animation: fadeInUp 0.8s ease-out forwards; }
-    </style>
-</head>
-<body class="bg-[url('assets/studio-bg.webp')] bg-center bg-cover bg-no-repeat bg-fixed text-[#F0E5CF] scroll-smooth font-['Raleway'] tracking-wide overflow-x-hidden">
-    <div class="bg-black/70 min-h-screen">
-        <nav class="bg-stone-400/20 p-2 sticky top-0 z-10">
-            <div class="container mx-auto flex items-center justify-between">
-                <img src="assets/Screenshot_2025-07-11_163422-removebg-preview.png" class="h-12 p-0 flex justify-end" alt="RedHot Group Logo">
-                <button id="menu-toggle" class="text-rose-200 hover:text-rose-500 md:hidden focus:outline-none">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
+    <div class="mx-[1rem] md:mx-0">
+      <!-- Hero Section -->
+      <section class="relative max-h-screen h-full mt-[5rem]" id="hero">
+
+        <div class="w-full px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-6">
+          <div class=" flex md:flex-col gap-3 justify-center md:min-h-screen lg:w-[50%]">
+            <div class="lg:flex lg:flex-col gap-6">
+              <h1 class="text-3xl text-center md:text-6xl font-bold text-black mb-6 leading-tight">
+                LUXURY REAL ESTATE
+                <span class="block text-red-500">FILMING</span>
+                <span class="block text-gray-400">PREMIUM LOCATIONS</span>
+              </h1>
+              <p class="text-lg text-black/80">Discover the finest filming locations tailored for luxury projects.</p>
+              <div class="flex justify-between md:justify-center mt-4">
+                <button id="openContact" class="bg-red-600 md:w-1/4 text-white px-6 py-2 rounded-lg hover:opacity-90 transition-colors font-medium">
+                  Contact for booking
                 </button>
-
-                <ul id="menu" class="transition-all duration-300 hidden flex-col md:flex md:flex-row md:space-x-4 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-stone-700/90 md:bg-transparent text-center md:text-right z-20">
-                    <li><a href="index.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">Home</a></li>
-                    <li><a href="RedhotConcept.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">RedhotConcept</a></li>
-                    <li><a href="Doubledoors.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">Double Doors Studios</a></li>
-                    <li><a href="Teffest.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">TEFFEST</a></li>
-                    <li><a href="Oseal.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">Oseal</a></li>
-                    <li><a href="#contact" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">Contact</a></li>
-                </ul>
+                <button class="ml-4 md:w-1/4 border border-amber-500 hover:bg-amber-500 text-black px-6 py-2 rounded-lg hover:opacity-90 transition-colors font-medium">
+                  spaces
+                </button> 
+              </div>
             </div>
-        </nav>
-        <main>
-            <div class="bg-white/10 w-full backdrop-blur-md  shadow-lg p-6 sm:p-8 space-y-8 text-center sm:text-left animate-fade-in opacity-0 animate-on-scroll">
-                <h3 class="text-2xl sm:text-3xl font-bold text-[#f6d9b4] mt-12 text-center fade-in-delay-100">Double Doors Studios</h3>
+            <div class="md:gap-4 mt-8 hidden md:flex">
+              <div>
+                <img src="assets/dd-1.webp" alt="Doubledoors" class="w-full h-[300px] object-cover overflow-hidden rounded-3xl">
+              </div>
+              <div class="bg-gray-200 p-4 rounded-lg text-lg text-black flex flex-col gap-4 justify-center">
+                <!-- <p>concept <span class="text-white">Locations</span></p> -->
 
-                <div class="max-w-4xl mx-auto mt-6 fade-in-delay-200">
-                    <p class="text-base sm:text-lg leading-relaxed text-stone-100 fade-in-delay-200">
-                    Welcome to Double Doors Studios — where creativity opens up limitless possibilities. More than a structure, it's a space engineered for bold dreamers, storytellers, and makers of all kinds. Whether you're a filmmaker, podcaster, visual artist, digital nomad, or startup creator, our environment is designed to help you thrive.
-                    </p>
+                <h4 class="text-xl font-bold text-black">CONCEPT</h4>
+                <!-- <h4 class="text-lg text-black/80">LOCATIONS</h4> -->
+                <p class="text-black/80">Explore our unique concept locations designed for high-end productions.</p>
+                <p class="text-black/80">lekki phase 1, Lagos <span class="text-red-500">Nigeria</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-3xl w-[50%]  h-[50vh] hidden lg:block">
+            <img src="assets/dd-3.webp" alt="Doubledoors" class="w-full h-[800px] object-cover overflow-hidden rounded-3xl">
+          </div>
+        </div>
 
-                    <p class="text-base sm:text-lg leading-relaxed text-stone-100 fade-in-delay-200">
-                    As the first entertainment-forward real estate venture of its kind in West Africa, we’ve fused modern architecture with immersive tech and creative thinking. From soundproofed media suites to creator residency apartments, everything here serves a purpose: to let your talent flow, grow, and be seen.
-                    </p>
-                </div>
+      </section>
+
+      <section id="gallery" class="py-20 w-full max-w-7xl mx-auto">
+        <div>
+          <h2 class="text-center text-5xl font-bold bg-stone-200 py-6 text-black mb-4">Gallery</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+          <img src="assets/dd-2.webp" alt="Doubledoors" class="w-full h-[450px] object-cover overflow-hidden rounded-3xl">
+          <img src="assets/dd-4.webp" alt="Doubledoors" class="w-full h-[450px] object-cover overflow-hidden rounded-3xl">
+          <img src="assets/dd-5.webp" alt="Doubledoors" class="w-full h-[450px] object-cover overflow-hidden rounded-3xl">
+          <img src="assets/dd-1.webp" alt="Doubledoors" class="w-full h-[450px] object-cover overflow-hidden rounded-3xl">
+        </div>
+      </section>
+
+
+      
+
+      <!-- Services -->
+      <section id="Listings" class="py-20 w-full max-w-7xl mx-auto flex flex-col gap-8">
+        <div>
+          <h2 class="text-center text-5xl font-bold bg-stone-200 py-6 text-black mb-4">Available Now</h2>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 mx-auto px-6 md:px-12 bg-stone-300 rounded-tl-[50px] p-10 overflow-hidden rounded-br-[50px]">
+          <div class="md:w-[50%]"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Service 1"></div>
+          <div class="md:w-[50%] flex flex-col gap-4 justify-end">
+            <h3 class="text-3xl md:text-5xl font-bold">Deluxe Residence</h3>
+            <p class="text-lg text-italic">Experience the epitome of luxury living in our Deluxe Residence.</p>
+            <div class="">
+              <p class="text-black/80 text-[20px]">Swimming pool</p>
+              <p class="text-black/80 text-[20px]">Private gym</p>
+              <p class="text-black/80 text-[20px]">Home theater</p>
+              <p class="text-black/80 text-[20px]">Smart home technology</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 mx-auto px-6 md:px-12 bg-stone-300 rounded-tl-[50px] p-10 overflow-hidden rounded-br-[50px]">
+          <div class="md:w-[50%]"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Service 1"></div>
+          <div class="md:w-[50%] flex flex-col gap-4 justify-end">
+            <h3 class="text-3xl md:text-5xl font-bold">Deluxe Residence</h3>
+            <p class="text-lg text-italic">Experience the epitome of luxury living in our Deluxe Residence.</p>
+            <div class="">
+              <p class="text-black/80 text-[20px]">Swimming pool</p>
+              <p class="text-black/80 text-[20px]">Private gym</p>
+              <p class="text-black/80 text-[20px]">Home theater</p>
+              <p class="text-black/80 text-[20px]">Smart home technology</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 mx-auto px-6 md:px-12 bg-stone-300 rounded-tl-[50px] p-10 overflow-hidden rounded-br-[50px]">
+          <div class="md:w-[50%]"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Service 1"></div>
+          <div class="md:w-[50%] flex flex-col gap-4 justify-end">
+            <h3 class="text-3xl md:text-5xl font-bold">Deluxe Residence</h3>
+            <p class="text-lg text-italic">Experience the epitome of luxury living in our Deluxe Residence.</p>
+            <div class="">
+              <p class="text-black/80 text-[20px]">Swimming pool</p>
+              <p class="text-black/80 text-[20px]">Private gym</p>
+              <p class="text-black/80 text-[20px]">Home theater</p>
+              <p class="text-black/80 text-[20px]">Smart home technology</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+   
+    <!-- Footer -->
+    <footer class="bg-[#1e1e1e] text-[#e9d7c3] py-10">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row justify-around items-center gap-2 md:gap-0">                        
+          <!-- Logo & Tagline -->
+          <div id="contact" class="text-center md:text-left">
+            <p class="text-center font-bold">CONTACT US</p>
+            <p><a href="mailto:info@redhotgroup.com" class="text-stone-500 hover:text-stone-300">info@redhotgroup.com</a></p>
+          </div>
+          <!-- Social Media Icons -->
             
-                <div class="grid md:grid-cols-3 gap-8 text-center w-[85%] mx-auto my-8">
-                    <div class="p-6 rounded-lg bg-black/30 shadow-xl hover:scale-105 transition fade-in-delay-300">
-                        <h4 class="text-xl font-bold text-rose-400 mb-2">Creators’ Residency</h4>
-                        <p class="text-sm">Short-term live/work studios for visiting artists, digital creatives, and producers looking for full immersion.</p>
-                    </div>
-                    <div class="p-6 rounded-lg bg-black/30 shadow-xl hover:scale-105 transition fade-in-delay-400">
-                        <h4 class="text-xl font-bold text-rose-400 mb-2">Hybrid Performance Spaces</h4>
-                        <p class="text-sm">From intimate showcases to tech-enabled events, our modular venues flex to your vision.</p>
-                    </div>
-                    <div class="p-6 rounded-lg bg-black/30 shadow-xl hover:scale-105 transition fade-in-delay-500">
-                        <h4 class="text-xl font-bold text-rose-400 mb-2">Immersive Studios</h4>
-                        <p class="text-sm">State-of-the-art podcast, film, AR/VR, and audio recording rooms to take your content global.</p>
-                    </div>
-                </div>
-                <div class="text-center mt-8">
-                    <a href="#contact" aria-label="Book a Studio Tour or Session" class="inline-block bg-rose-600 hover:bg-rose-700 text-white text-lg font-semibold px-6 py-3 rounded-full transition shadow-lg">
-                        Book a Studio Tour or Session →
-                    </a>
-                    <p class="mt-2 text-sm text-stone-300">Limited slots available. Advance booking recommended.</p>
-                </div>
+        </div>
+        <hr class="my-4 border-stone-600">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div>
+            <p class="text-sm">Follow us on:</p>
+            <div class="flex justify-start space-x-4">
+              <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+          </div>
+          <div class="mt-8 text-center text-sm text-stone-500">
+              © 2025 RedHot Group. All rights reserved.
+          </div>
+          <div>
+            <img src="assets/logo.png" class="h-20 p-0" alt="RedHot Logo">
+          </div>
+        </div>                    
+      </div>
+  </footer> 
 
-                <a aria-label="View Location on Google Maps" href="https://www.google.com/maps/place/Double+doors+studio/@6.4286182,3.4719181,17z/data=!3m1!4b1!4m6!3m5!1s0x103bf5b456748479:0x3b666b0c15d24597!8m2!3d6.4286182!4d3.474493!16s%2Fg%2F11m_m3n164?authuser=0&entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D">
-                    <p class="text-white"> 
-                        <span class="text-rose-500 hover:text-white">Location:</span> 
-                        <span class="hover:text-rose-500">
-                            Double doors studio, 13a , Oriwu street , Elf bus - stop , Lekki, Lagos, Nigeria 105102 
-                        </span>
-                    </p>
-                </a>
+    <!-- JS -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const menuDrawer = document.getElementById("menuDrawer");
+      const menuOverlay = document.getElementById("menuOverlay");
+      const menuPanel = document.getElementById("menuPanel");
+      const closeDrawer = document.getElementById("closeDrawer");
 
-                <h4 class="text-xl mb-[40px] mt-[40px] text-center md:text-5xl mt-5 font-semibold text-rose-500 fade-in-delay-300">Gallery</h4>
-                <div class="flex flex-wrap gap-4 justify-center">
-                    <img class="w-[500px] h-[380px] rounded-lg" src="assets/dd-1.webp" alt="double doors studio image 1">
-                    <img class="w-[500px] h-[380px] rounded-lg" src="assets/dd-2.webp" alt="double doors studio image 2">
-                    <img class="w-[500px] h-[380px] rounded-lg" src="assets/dd-3.webp" alt="double doors studio image 3">
-                    <img class="w-[500px] h-[380px] rounded-lg" src="assets/dd-4.webp" alt="double doors studio image 4">
-                    <img class="w-[500px] h-[380px] rounded-lg" src="assets/dd-5.webp" alt="double doors studio image 5">
-                </div>
+      function openDrawer() {
+        menuDrawer.classList.remove("hidden");
+        setTimeout(() => {
+          menuOverlay.classList.remove("opacity-0");
+          menuPanel.classList.remove("-translate-x-full");
+        }, 10);
+      }
+      function closeDrawerFn() {
+        menuOverlay.classList.add("opacity-0");
+        menuPanel.classList.add("-translate-x-full");
+        setTimeout(() => {
+          menuDrawer.classList.add("hidden");
+        }, 300);
+      }
+      hamburgerBtn.addEventListener("click", openDrawer);
+      closeDrawer.addEventListener("click", closeDrawerFn);
+      menuOverlay.addEventListener("click", closeDrawerFn);
 
-                <h3 class="text-xl font-semibold text-[#f6d9b4] mt-8">Studio Infrastructure Highlights</h3>
-                <ul class="list-disc list-inside text-stone-100 space-y-2 fade-in-delay-400">
-                    <li>Purpose-Built Creative Spaces</li>
-                    <li>Professional-grade film sets, rehearsal rooms, and post-production facilities</li>
-                    <li>On-site cinema screening rooms for private or public exhibitions</li>
-                    <li>Fully equipped podcast and audio production studios</li>
-                    <li>Flexible event and performance venues</li>
-                    <li>Residency suites for short/long-term creatives and international collaborators</li>
-                </ul>
+      lucide.createIcons();
 
-                <div class="text-stone-100 mt-10 italic text-center md:text-end fade-in-delay-500">
-                    <p class="md:w-[65%] md:ml-[30%]">
-                        "Africa’s entertainment industry is bursting with talent — but lacks the infrastructure to scale globally. <br> Double Doors Studios fills this gap by providing access to premium facilities that are locally accessible yet globally competitive."
-                    </p>
-                    <span class="text-end md:w-[65%] md:ml-[30%] block mt-2"><i>- Anonymous</i></span>
-                </div>
+      // Hero
+      const heroImages = [
+        "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/2883049/pexels-photo-2883049.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      ];
+      let currentHero = 0;
+      const heroImageEl = document.getElementById("heroImage");
+      const heroIndicators = document.getElementById("heroIndicators");
 
-                <div id="contact" class="mt-12 max-w-2xl mx-auto p-6 bg-black/30 rounded-lg">
-                    <h4 class="text-xl font-semibold text-center text-rose-400 mb-6">Get In Touch</h4>
-                    <form class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                        <input type="text" placeholder="Your Name" class="p-3 rounded bg-black/30 text-white placeholder-stone-400">
-                        <input type="email" placeholder="Email Address" class="p-3 rounded bg-black/30 text-white placeholder-stone-400">
-                        <input type="text" placeholder="Subject" class="p-3 rounded bg-black/30 text-white placeholder-stone-400 sm:col-span-2">
-                        <textarea rows="5" placeholder="Your Message" class="p-3 rounded bg-black/30 text-white placeholder-stone-400 sm:col-span-2"></textarea>
-                        <button type="submit" aria-label="Send Message" class="bg-rose-500 hover:bg-rose-600 text-white px-6 py-3 rounded-full font-semibold transition sm:col-span-2">Send Message</button>
-                    </form>
-                </div>
+      function renderHero() {
+        heroImageEl.src = heroImages[currentHero];
+        heroIndicators.innerHTML = heroImages.map((_, i) => 
+          `<button onclick="setHero(${i})" class="w-3 h-3 rounded-full ${i===currentHero?'bg-amber-400':'bg-white/50'}"></button>`
+        ).join("");
+      }
+      window.setHero = (i) => { currentHero=i; renderHero(); };
+
+      document.getElementById("nextHero").addEventListener("click", () => {
+        currentHero=(currentHero+1)%heroImages.length;
+        renderHero();
+      });
+      document.getElementById("prevHero").addEventListener("click", () => {
+        currentHero=(currentHero-1+heroImages.length)%heroImages.length;
+        renderHero();
+      });
+      renderHero();
+
+      // Contact Modal
+      const modal=document.getElementById("contactModal");
+      document.getElementById("openContact").onclick=()=>modal.classList.remove("hidden");
+      document.getElementById("bookNow").onclick=()=>modal.classList.remove("hidden");
+      document.getElementById("closeContact").onclick=()=>modal.classList.add("hidden");
+
+      // Properties
+      const featuredProperties = [
+        {id:1,title:"Modern Downtown Penthouse",location:"Manhattan, NYC",category:"luxury",images:["https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800"],price:"$2,500/day",sqft:"2,400 sq ft"},
+        {id:2,title:"Victorian Manor Estate",location:"Beverly Hills, CA",category:"period",images:["https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800"],price:"$4,200/day",sqft:"8,500 sq ft"},
+        {id:3,title:"Industrial Warehouse Loft",location:"Brooklyn, NYC",category:"industrial",images:["https://images.pexels.com/photos/2883049/pexels-photo-2883049.jpeg?auto=compress&cs=tinysrgb&w=800"],price:"$1,800/day",sqft:"5,200 sq ft"},
+        {id:4,title:"Beachfront Villa",location:"Malibu, CA",category:"luxury",images:["https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=800"],price:"$3,800/day",sqft:"4,800 sq ft"},
+      ];
+
+      let selectedCategory = "all";
+      const grid = document.getElementById("propertiesGrid");
+
+      function renderProps(){
+        const props = selectedCategory === "all" 
+          ? featuredProperties 
+          : featuredProperties.filter(p => p.category === selectedCategory);
+
+        grid.innerHTML = props.map(p => `
+          <div class="group relative overflow-hidden rounded-2xl bg-zinc-900">
+            <div class="aspect-[4/3] relative">
+              <img src="${p.images[0]}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
             </div>
+            <div class="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-red-500 text-white px-3 py-1 rounded-full font-bold text-sm">${p.price}</div>
+            <div class="p-6 relative z-10">
+              <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-amber-400 transition-colors">${p.title}</h3>
+              <div class="flex items-center text-white/60 gap-2 mb-3">
+                <i data-lucide="map-pin" class="w-4 h-4"></i> ${p.location}
+              </div>
+              <div class="flex items-center text-white/60 gap-2 mb-3">
+                <i data-lucide="ruler" class="w-4 h-4"></i> ${p.sqft}
+              </div>
+            </div>
+          </div>
+        `).join("");
+        lucide.createIcons();
+      }
 
-            <footer class="bg-[#1e1e1e] text-[#e9d7c3] py-10">
-                <div class="container mx-auto px-6 md:px-12">
-                    <div class="flex flex-col md:flex-row justify-around items-center gap-2 md:gap-0">                        
-                        <div class="text-center md:text-left">
-                            <img src="assets/Screenshot_2025-07-11_163422-removebg-preview.png" class="h-12 mx-auto md:mx-0 mb-2" alt="RedHot Logo">
-                            <p class="text-sm">RedHot Group <br>
-                                Elevating Ideas, Talent & Entertainment</p>
-                        </div>
+      // Category button underline toggle
+      document.querySelectorAll(".category-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          // hide all underlines
+          document.querySelectorAll(".category-btn .underline-span")
+            .forEach(span => span.classList.add("scale-x-0"));
+          // show underline for clicked button
+          btn.querySelector(".underline-span").classList.remove("scale-x-0");
+          // update category
+          selectedCategory = btn.dataset.category;
+          renderProps();
+        });
+      });
 
-                        <div class="flex flex-col md:flex-row items-center gap-4">
-                            <a href="index.html" class="hover:text-rose-400 transition">Home</a>
-                            <a href="RedhotConcept.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">RedhotConcept</a>
-                            <a href="Doubledoors.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">Double Doors Studios</a>
-                            <a href="Teffest.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">TEFFEST</a>
-                            <a href="Oseal.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">Oseal</a>
-                            <a href="#contact" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">Contact</a>
-                        </div>
+      // Initial render
+      renderProps();
+      // Show underline on "All" button initially
+      document.querySelector('.category-btn[data-category="all"] .underline-span')
+        .classList.remove("scale-x-0");
 
-                        <div class="flex gap-4">
-                            <a href="#" aria-label="Instagram" class="hover:text-rose-400 transition">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.206.058 2.003.25 2.47.415a4.927 4.927 0 011.675 1.093 4.927 4.927 0 011.093 1.675c.165.467.357 1.264.415 2.47.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.058 1.206-.25 2.003-.415 2.47a4.927 4.927 0 01-1.093 1.675 4.927 4.927 0 01-1.675 1.093c-.467.165-1.264.357-2.47.415-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.206-.058-2.003-.25-2.47-.415a4.927 4.927 0 01-1.675-1.093 4.927 4.927 0 01-1.093-1.675c-.165-.467-.357-1.264-.415-2.47C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.058-1.206.25-2.003.415-2.47a4.927 4.927 0 011.093-1.675 4.927 4.927 0 011.675-1.093c.467-.165 1.264-.357 2.47-.415C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.332.015 7.053.072 5.775.129 4.833.296 4.053.61a6.87 6.87 0 00-2.49 1.64A6.87 6.87 0 00.61 4.053C.296 4.833.129 5.775.072 7.053.015 8.332 0 8.741 0 12c0 3.259.015 3.668.072 4.947.057 1.278.224 2.22.538 3 .315.78.738 1.446 1.362 2.07.624.624 1.29 1.047 2.07 1.362.78.314 1.722.481 3 .538 1.279.057 1.688.072 4.947.072s3.668-.015 4.947-.072c1.278-.057 2.22-.224 3-.538a6.87 6.87 0 002.07-1.362 6.87 6.87 0 001.362-2.07c.314-.78.481-1.722.538-3 .057-1.279.072-1.688.072-4.947s-.015-3.668-.072-4.947c-.057-1.278-.224-2.22-.538-3a6.87 6.87 0 00-1.362-2.07 6.87 6.87 0 00-2.07-1.362c-.78-.314-1.722-.481-3-.538C15.668.015 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
-                            </a>
-                            <a href="#" aria-label="Twitter" class="hover:text-rose-400 transition">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.954 4.569a10 10 0 01-2.825.775A4.958 4.958 0 0023.337 3.1a10.1 10.1 0 01-3.127 1.184 4.92 4.92 0 00-8.379 4.482A13.978 13.978 0 011.671 3.15a4.822 4.822 0 001.523 6.573 4.902 4.902 0 01-2.229-.616v.06a4.936 4.936 0 003.946 4.827 4.902 4.902 0 01-2.224.084 4.937 4.937 0 004.604 3.417A9.867 9.867 0 010 19.54a13.951 13.951 0 007.548 2.209c9.057 0 14.01-7.5 14.01-14.004 0-.213-.006-.425-.017-.636a9.936 9.936 0 002.414-2.54z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-8 text-center text-sm text-stone-500">
-                        © 2025 RedHot Group. All rights reserved.
-                    </div>
-                </div>
-            </footer>
-        </main>
-    </div>   
-    <script src="index.js"></script>    
-</body>
+      // Gallery
+      const galleryImgs=[...heroImages,...featuredProperties.flatMap(p=>p.images)];
+      const gallery=document.getElementById("galleryGrid");
+      gallery.innerHTML=galleryImgs.map(src=>`<div class="overflow-hidden rounded-xl group"><img src="${src}" class="w-full transition-transform duration-700 group-hover:scale-110"></div>`).join("");
+    });
+    </script>
+  </body>
 </html>

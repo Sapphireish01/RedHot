@@ -1,247 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <meta name="description" content="RedHot Group: Elevating Ideas, Talent & Entertainment across Africa with impactful storytelling, events, and innovation." />
-        <title>RedHot Group</title>
-        <link rel="stylesheet" href="">
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">   
-        <style>
-            @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            }
-
-            .animate-fade-in {
-            animation: fadeInUp 1s ease-out forwards;
-            }
-
-            .animate-on-scroll {
-            opacity: 0;
-            }
-
-            .fade-in-delay-100 { animation-delay: 0.1s; animation: fadeInUp 0.8s ease-out forwards; }
-            .fade-in-delay-200 { animation-delay: 0.2s; animation: fadeInUp 0.8s ease-out forwards; }
-            .fade-in-delay-300 { animation-delay: 0.3s; animation: fadeInUp 0.8s ease-out forwards; }
-            .fade-in-delay-400 { animation-delay: 0.4s; animation: fadeInUp 0.8s ease-out forwards; }
-            .fade-in-delay-500 { animation-delay: 0.5s; animation: fadeInUp 0.8s ease-out forwards; }
-            .fade-in-delay-600 { animation-delay: 0.6s; animation: fadeInUp 0.8s ease-out forwards; }
-            .fade-in-delay-700 { animation-delay: 0.7s; animation: fadeInUp 0.8s ease-out forwards; }
-       </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RedHot Group: Elevating Ideas, Talent & Entertainment across Africa with impactful storytelling, events, and innovation.">
+    <title>RedHot Group</title>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+        }
+        .scrollbar-hide {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;     /* Firefox */
+        }
+    </style>
     </head>   
 
-
-    <body class="bg-[url('assets/studio-bg.webp')] bg-center bg-cover bg-no-repeat bg-fixed text-[#F0E5CF] scroll-smooth font-['Raleway'] tracking-wide overflow-x-hidden">
+    <body class="bg-white text-black scroll-smooth font-['Raleway'] overflow-x-hidden">
         <div class="min-h-screen">
-            <div class="bg-black/70 min-h-screen">                       
-                <nav class="bg-stone-400/20 p-2 sticky top-0 z-10">
+            <div class="bg-black/20 min-h-screen">                       
+
+                <!-- NAV -->
+                <nav id="tranpoint" class="p-2 fixed top-0 left-0 w-full z-50">
                     <div class="container mx-auto flex items-center justify-between">
-                        <img src="assets/Screenshot_2025-07-11_163422-removebg-preview.png" class="h-12 p-0 flex justify-end" alt="RedHot Group Logo">
-                        
-                        <button id="menu-toggle" class="text-rose-200 hover:text-rose-500 md:hidden focus:outline-none">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                        <!-- Hamburger -->
+                        <button id="menu-toggle" class="text-rose-200 hover:text-rose-500 focus:outline-none z-30">
+                            <svg id="icon-hamburger" class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                            </svg>
+                            <svg id="icon-close" class="w-8 h-8 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                             </svg>
                         </button>
 
-                        <ul id="menu" class="transition-all duration-300 hidden flex-col md:flex md:flex-row md:space-x-4 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-stone-700/90 md:bg-transparent text-center md:text-right z-20">
-                            <li><a href="index.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">Home</a></li>
-                            <li><a href="RedhotConcept.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">RedhotConcept</a></li>
-                            <li><a href="Doubledoors.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">Double Doors Studios</a></li>
-                            <li><a href="Teffest.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">TEFFEST</a></li>
-                            <li><a href="Oseal.html" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">Oseal</a></li>
-                            <li><a href="#contact" class="block py-2 md:py-0 text-rose-200 hover:text-rose-500 hover:underline mx-6">Contact</a></li>
+                        <a class="pl-14" href="index.html">
+                            <img src="assets/logo.png" class="h-20" alt="RedHot Group Logo">
+                        </a>
+                        <!-- Fullscreen Menu -->
+                        <ul id="menu" class="fixed top-0 left-0 w-[200px] h-full bg-stone-900 bg-opacity-95 text-rose-200
+                                transform -translate-x-full transition-transform duration-300 ease-in-out
+                                flex flex-col space-y-6 text-lg py-10 px-4 z-20"
+                            >
+                            <li><img class="h-20 mx-auto" src="assets/logo.png" alt="RedHot Group Logo"></li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="RedhotConcept.html">RedhotConcepts</a></li>
+                            <li><a href="Doubledoors.html">Double Doors Studios</a></li>
+                            <li><a href="Oseal.html">Oseal</a></li>
+                            <li><a href="Oyep.html">OYEP</a></li>
+                            <li><a href="https://www.teffest.com/">TEFFEST</a></li>
                         </ul>
+
                     </div>
                 </nav>
 
-                <main>                    
-                    <div class="container mx-auto p-4 text-center flex flex-col items-center justify-center h-[calc(100vh-64px)]">
-                        <h1 class="text-3xl sm:text-5xl md:text-6xl text-rose-600 font-bold mb-4">Welcome to RedHot Group</h1>
-                        <p class="text-3xl text-stone-200/80">Elevating Every Idea</p>                  
-                        <p class="text-xl mt-6 text-stone-200/80 mb-6">Orchestrating Iconic Moments with Timeless Sophistication.</p>
-                        <button class="bg-transparent ring ring-rose-500/50 text-white py-2 px-4 rounded-full hover:bg-rose-500">Get Started</button>
+                <!-- HERO SLIDESHOW -->
+                <main>
+                    <div class="relative w-full h-[80vh] overflow-hidden bg-black">
+                        <!-- Video layers -->
+                        <video id="video1" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"></video>
+                        <video id="video2" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"></video>
+
+                        <!-- Image layers -->
+                        <img id="image1" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+                        <img id="image2" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+
+                        <!-- Overlay content -->
+                        <div id="slideContent" class="absolute left-10 top-3/4 -translate-y-1/2 w-1/2 text-white opacity-0 transition-opacity duration-1000">
+                            <h1 id="slideTitle" class="text-6xl font-bold mb-4"></h1>
+                            <hr class="border-white/30 mb-4">
+                            <p id="slideDesc" class="text-lg mb-4"></p>
+                            <a id="slideLink" class="inline-block px-6 py-3 border-b border-red-600 hover:bg-red-700 transition" href="#">Learn More</a>
+                        </div>
+
+                        <!-- Unmute button -->
+                        <button id="unmuteBtn" class="hidden absolute bottom-6 left-10 bg-black/60 text-white px-4 py-2 rounded-lg transition hover:bg-black/80">
+                            🔇 Mute
+                        </button>
                     </div>
 
-                    <section class="flex flex-col md:flex-row items-center justify-between px-6 py-16 gap-10 w-full bg-rose-500/50">
-        
-                        <!-- Text Content -->
-                        <div class="md:w-1/2 text-center md:text-left">
-                            <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-snug">Bringing Ideas, <br /> Brands & Entertainment to Life</h2>
-                            <p class="text-lg leading-relaxed mb-8">
-                            RedHot Group is a trailblazing collective of visionary brands and ventures, united by a bold mission:
-                                to redefine storytelling, entertainment, and lifestyle across Africa and project our culture to the world.
-                                <br>
-                                Rooted in the vibrancy of African creativity and powered by global standards, RedHot Group bridges the gap between local talent and international opportunity. 
-                                We create, develop, and amplify powerful narratives through film, <br> live events, brand strategy, real estate innovation, and industry-focused education.
-                                Whether you're a global investor, a rising creative, or a cultural enthusiast, RedHot Group offers a platform where stories begin, talent thrives, and impact is made — from Africa to the world.
-                            </p>
-                            <div class="md:flex md:justify-end md:w-full">                            
-                                <a href="#contact" class="inline-block border-2 border-[#F0E5CF] rounded-full px-6 py-3 text-base font-semibold hover:bg-[#F0E5CF] hover:text-rose-500 transition-colors duration-300">
-                                    CONTACT US
-                                </a>
+                    <section class="w-full flex flex-col">
+                                            
+                        <!-- Header -->
+                        <h2 class="text-2xl font-bold px-6 pt-6">Trending Trailers</h2>
+
+                        <!-- Carousel container -->
+                        <div class="relative flex-1 flex items-center">
+                        
+                        <!-- Left Arrow -->
+                        <button id="leftBtn" 
+                            class="absolute left-2 z-10 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full">
+                            &#10094;
+                        </button>
+
+                        <!-- Slider track -->
+                        <div id="slider" class="flex gap-4 overflow-x-scroll px-12 py-6 w-full scrollbar-hide scroll-smooth">
+                            
+                            <!-- Card 1 -->
+                            <a href="https://www.youtube.com/watch?v=wZti8QKBWPo">
+                                <div class="min-w-[250px] md:min-w-[300px] relative rounded-lg overflow-hidden">
+                                    <img src="https://i.ytimg.com/vi/wZti8QKBWPo/maxresdefault.jpg" 
+                                        alt="Nobody 2" 
+                                        class="w-full h-40 md:h-48 object-cover rounded-lg">
+                                    <!-- Play button -->
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                        </div>
+                                    </div>
+                                    <p class="mt-2 font-semibold text-sm md:text-base">Nobody 2 - Official Trailer</p>
+                                </div>
+                            </a>
+                            <!-- Card 2 -->
+                            <a href="https://www.youtube.com/watch?v=X2m-08cOAbc">
+                                <div class="min-w-[250px] md:min-w-[300px] relative rounded-lg overflow-hidden">
+                                    <img src="https://i.ytimg.com/vi/X2m-08cOAbc/maxresdefault.jpg" 
+                                        alt="Five Nights 2" 
+                                        class="w-full h-40 md:h-48 object-cover rounded-lg"
+                                    >
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                        </div>
+                                    </div>
+                                    <p class="mt-2 font-semibold text-sm md:text-base">Five Nights at Freddy's 2</p>
+                                </div>
+                            </a>
+                            
+
+                            <!-- Card 3 -->
+                            <div class="min-w-[250px] md:min-w-[300px] relative rounded-lg overflow-hidden">
+                            <img src="https://i.ytimg.com/vi/6COmYeLsz4c/maxresdefault.jpg" 
+                                alt="Wicked" 
+                                class="w-full h-40 md:h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                </div>
                             </div>
+                            <p class="mt-2 font-semibold text-sm md:text-base">Wicked: For Good</p>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="min-w-[250px] md:min-w-[300px] relative rounded-lg overflow-hidden">
+                            <img src="https://i.ytimg.com/vi/BRb4U99OU80/maxresdefault.jpg" 
+                                alt="M3GAN 2.0" 
+                                class="w-full h-40 md:h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <p class="mt-2 font-semibold text-sm md:text-base">M3GAN 2.0 - Final Trailer</p>
+                            </div>
+
+                            <!-- Card 5 -->
+                            <div class="min-w-[250px] md:min-w-[300px] relative rounded-lg overflow-hidden">
+                            <img src="https://i.ytimg.com/vi/JfVOs4VSpmA/maxresdefault.jpg" 
+                                alt="Spiderman" 
+                                class="w-full h-40 md:h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <p class="mt-2 font-semibold text-sm md:text-base">Spiderman: No Way Home</p>
+                            </div>
+
+                            <!-- Card 6 -->
+                            <div class="min-w-[250px] md:min-w-[300px] relative rounded-lg overflow-hidden">
+                            <img src="https://i.ytimg.com/vi/sGbxmsDFVnE/maxresdefault.jpg" 
+                                alt="Star Wars" 
+                                class="w-full h-40 md:h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <p class="mt-2 font-semibold text-sm md:text-base">Star Wars - The Force Awakens</p>
+                            </div>
+
+                            <!-- Card 7 -->
+                            <div class="min-w-[250px] md:min-w-[300px] relative rounded-lg overflow-hidden">
+                            <img src="https://i.ytimg.com/vi/TcMBFSGVi1c/maxresdefault.jpg" 
+                                alt="Avengers Endgame" 
+                                class="w-full h-40 md:h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <p class="mt-2 font-semibold text-sm md:text-base">Avengers: Endgame</p>
+                            </div>
+
+                            <!-- Card 8 -->
+                            <div class="min-w-[250px] md:min-w-[300px] relative rounded-lg overflow-hidden">
+                            <img src="https://i.ytimg.com/vi/EXeTwQWrcwY/maxresdefault.jpg" 
+                                alt="Dark Knight" 
+                                class="w-full h-40 md:h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <p class="mt-2 font-semibold text-sm md:text-base">The Dark Knight</p>
+                            </div>
+
+                            <!-- Card 9 -->
+                            <div class="min-w-[250px] md:min-w-[300px] relative rounded-lg overflow-hidden">
+                            <img src="https://i.ytimg.com/vi/qSqVVswa420/maxresdefault.jpg" 
+                                alt="Top Gun Maverick" 
+                                class="w-full h-40 md:h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <p class="mt-2 font-semibold text-sm md:text-base">Top Gun: Maverick</p>
+                            </div>
+
+                            <!-- Card 10 -->
+                            <div class="min-w-[250px] md:min-w-[300px] relative rounded-lg overflow-hidden">
+                            <img src="https://i.ytimg.com/vi/2LqzF5WauAw/maxresdefault.jpg" 
+                                alt="Black Panther" 
+                                class="w-full h-40 md:h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <p class="mt-2 font-semibold text-sm md:text-base">Black Panther</p>
+                            </div>
+
                         </div>
 
-                        <!-- Image Grid -->
-                        <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <img src="assets/dd-5.webp" alt="Doubledoors image" class="row-span-2 w-full h-full object-cover rounded" />
-                            <img src="assets/tff-1.webp" alt="teffest picture" class="w-full h-full object-cover rounded" />
-                            <img src="assets/studio-bg.webp" alt="Studio Background" class="w-full h-full object-cover rounded" />
+                        <!-- Right Arrow -->
+                        <button id="rightBtn" 
+                            class="absolute right-2 z-10 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full">
+                            &#10095;
+                        </button>
                         </div>
-
                     </section>
 
+                    
                     <section class="flex flex-col gap-10 w-full mx-auto px-4 sm:px-6 py-12 sm:py-16">
 
                         <h2 class="text-rose-500 text-center py-6 text-6xl">The RedHot group</h2>
 
                         <!-- RedHot Concepts -->
                         <div class="flex flex-col md:flex-row md:flex-wrap gap-6 mt-6 justify-center items-stretch "> 
-                        <a class="w-full sm:w-[48%] lg:w-[23%] transition-transform duration-300 hover:scale-105" href="RedhotConcept.html">
-                                <div class="flex flex-col border border-white/30 p-4 rounded-lg max-w-sm mx-auto">
-                                    <h5 class="text-2xl md:text-xl text-center my-2 font-semibold text-[#f6d9b4] fade-in-delay-300"> The Redhot Concept</h5>
-                                    <img src="assets/Screenshot_2025-07-11_163422-removebg-preview.png" class="w-[500px]" alt="RedHot Logo">
-                                    <p class="mt-2 ">
-                                    RedHot Concepts is a full-service brand and production company specializing in creative strategy, 
-                                    public relations, and high-impact content development. 
-                                        RedHot Concepts is where brands come to grow and audiences come to engage.
+                            <a class="w-full sm:w-[48%] lg:w-[23%] transition-transform duration-300 hover:scale-105" href="RedhotConcept.html">
+                                <img src="assets/Screenshot_2025-07-11_163422-removebg-preview.png" alt="">
+                                <div>
+                                    <p class="mt-2 px-8 font-bold">
+                                        REDHOT CONCEPTS 
+                                        <br>
+                                        SPEAKS
+                                        <br>
+                                        BRANDS | MANAGEMENT | PRODUCTION
                                     </p>
                                 </div>
                             </a>                   
 
                             <!-- Double Doors Studios -->
-                            <a class="w-full sm:w-[48%] lg:w-[23%] transition-transform duration-300 hover:scale-105" href="Doubledoors.html">
-                                <div class="flex flex-col border border-white/30 p-4 rounded-lg max-w-sm mx-auto">
-                                    <h5 class="text-2xl md:text-xl text-center my-2 font-semibold text-[#f6d9b4] fade-in-delay-300">The Double Doors Studios</h5>
-                                    <img src="assets/dd.png" class="w-[500px]" alt="Double Doors Studios">
-                                    <p class="mt-2 ">
-                                        Double Doors Studios is pioneering a bold vision at the intersection of entertainment and real estate — 
-                                        building infrastructure that supports creative development, production, and immersive content creation spaces. 
-                                        It’s where art meets architecture.
-                                    </p>
-                                </div>
+                            <a class="w-full sm:w-[48%] lg:w-[23%] transition-transform duration-300 hover:scale-105" href="Doubledoors.html">                                
+                                <img src="assets/dd.png" class="w-[500px]" alt="Double Doors Studios">
+                                <p class="mt-2 font-bold">
+                                    DOUBLEDOORS 
+                                    <br>
+                                    PIONEERING A BOLD 
+                                    <br>
+                                    VISION AT THE INTERSECTION
+                                    <br>
+                                    OF ENTERTAINMENT AND REAL ESTATE
+                                </p>
                             </a>  
                             
 
                             <!-- Teffest -->
-                            <a class="w-full sm:w-[48%] lg:w-[23%] transition-transform duration-300 hover:scale-105" href="Teffest.html">
-                                <div class="flex flex-col border border-white/30 p-4 rounded-lg max-w-sm mx-auto">
-                                    <h5 class="text-2xl md:text-xl text-center my-2 font-semibold text-[#f6d9b4] fade-in-delay-300">TEFFEST</h5>
-                                    <img src="assets/tff-3.webp" class="w-[500px]" alt="TEFFEST">
-                                    <p class="mt-2 ">
-                                    A multi-day live event featuring exhibitions, performances, product showcases, and networking sessions. 
+                            <a class="w-full sm:w-[48%] lg:w-[23%] transition-transform duration-300 hover:scale-105" href="Teffest.html">                                
+                                <img src="assets/tff-3.webp" class="w-[500px] h-[350px]" alt="TEFFEST">
+                                <p class="mt-2 font-bold">
+                                    TEFFEST
                                     <br>
-                                        Participants gain direct access to decision-makers, collaborators, and media coverage in an immersive, high-energy environment.
-                                    </p>
-                                </div> 
-                            </a>    
-                            
-                        
+                                    NETWORKING
+                                    <br>
+                                    OPPORTUNITIES
+                                    <br>
+                                    FOR COLLABORATION
+                                </p>                               
+                            </a>
+
 
                             <!-- OSEAL -->
                             <a class="w-full sm:w-[48%] lg:w-[23%] transition-transform duration-300 hover:scale-105" href="Oseal.html">
-                                <div class="flex flex-col border border-white/30 p-4 rounded-lg max-w-sm mx-auto">
-                                    <h5 class="text-2xl md:text-xl text-center my-2 font-semibold text-[#f6d9b4] fade-in-delay-300">Oseal</h5>
-                                    <img src="assets/acad.webp" class="w-[500px]" alt="OSEAL">
-                                    <p class="mt-2 ">
-                                        Omotola Skills, Entertainment & Lifestyle Institute is a coaching and mentorship institute focused on empowering the next generation of African talent in entertainment and lifestyle industries. 
-                                        <br>
-                                        Through curated programs, hands-on training, and strategic guidance, OSEAL nurtures skills and confidence in young creatives and entrepreneurs.
-                                    </p>
-                                </div>
+                                <img src="assets/acad.webp" class="w-[500px] h-[350px]" alt="OSEAL">
+                                <p class="mt-2 font-bold">
+                                    OMOTOLA SKILLS, ENTERTAINMENT & LIFESTYLE INSTITUTE
+                                    <br>
+                                    Empowering the next generation of African talent in entertainment and lifestyle industries.
+                                </p>
                             </a>  
                         </div>
-
-                        <div class="flex flex-col gap-6 mt-12 md:w-[65%] mx-auto px-4 sm:px-6">
-                            <h2 class="text-rose-500 text-center py-6 text-6xl">Why RedHot Group?</h2>
-                            <p class="text-lg text-center w-full text-stone-200/80 mb-8">
-                                At RedHot Group, we believe in the power of storytelling to transform lives and communities. 
-                                Our diverse portfolio reflects our commitment to excellence, innovation, and cultural impact.
-                            </p>
-                            <ul class="list-none flex flex-col gap-4 list-inside text-center text-lg text-stone-200/80">
-                                <li class="w-fit bg-rose-500/50 text-white text-center mx-auto">Proven Legacy in African entertainment and brand development</li>
-                                <li class="w-fit bg-rose-500/50 text-white text-center mx-auto">Multi-sector Approach combining media, events, real estate, and education</li>
-                                <li class="w-fit bg-rose-500/50 text-white text-center mx-auto">Visionary Leadership with over three decades of industry excellence</li>
-                                <li class="w-fit bg-rose-500/50 text-white text-center mx-auto">Global Network of partners, investors, and collaborators</li>
-                                <li class="w-fit bg-rose-500/50 text-white text-center mx-auto">Commitment to sustainability, inclusivity, and cultural authenticity</li>
-                                <li class="w-fit bg-rose-500/50 text-white text-center mx-auto"> We are committed to providing a platform for emerging talent through coaching, production, and exposure.</li>
-                            </ul>
-                            
-                        </div>
-
                     </section>
-
-
-                    <!-- Contact Section -->
-                    <section id="contact" class="max-w-2xl mx-auto mt-20 mb-16 p-8 bg-white/10 rounded-xl border border-white/20">
-                        <h3 class="text-2xl font-semibold text-rose-300 mb-4">Let’s Collaborate</h3>
-                        <p class="text-sm text-stone-200 mb-10">
-                            RedHot Group is more than a company — it's a platform, a vision, and a growing ecosystem. Whether you're a brand looking to grow, an investor, or a creative ready to make your mark, there's a place for you here. Start the conversation today.
-                        </p>
-                        <form class="space-y-4">
-                            <input type="text" placeholder="Full Name" class="w-full p-3 rounded bg-white/20 text-white placeholder-stone-200" required />
-                            <input type="email" placeholder="Email Address" class="w-full p-3 rounded bg-white/20 text-white placeholder-stone-200" required />
-                            <input type="text" placeholder="Subject" class="w-full p-3 rounded bg-white/20 text-white placeholder-stone-200" required />
-                            <textarea placeholder="Your Message" rows="5" class="w-full p-3 rounded bg-white/20 text-white placeholder-stone-200" required></textarea>
-                            <div class="flex justify-center items-center">
-                            <button type="submit" aria-label="Send Message" class="bg-rose-500 hover:bg-rose-600 text-white font-semibold px-6 py-3 rounded-full transition">Send Message</button>
-                            </div>
-                            
-                        </form>
-                    </section>               
-
 
                     <footer class="bg-[#1e1e1e] text-[#e9d7c3] py-10">
                         <div class="container mx-auto px-6 md:px-12">
                             <div class="flex flex-col md:flex-row justify-around items-center gap-2 md:gap-0">                        
                                 <!-- Logo & Tagline -->
                                 <div class="text-center md:text-left">
-                                    <img src="assets/Screenshot_2025-07-11_163422-removebg-preview.png" class="h-12 mx-auto md:mx-0 mb-2" alt="RedHot Logo">
-                                    <p class="text-sm">RedHot Group <br>
-                                        Elevating Ideas, Talent & Entertainment</p>
+                                    <p class="text-center font-bold">CONTACT US</p>
+                                    <p><a href="mailto:info@redhotgroup.com" class="text-stone-500 hover:text-stone-300">info@redhotgroup.com</a></p>
                                 </div>
-
-                                <!-- Quick Links -->
-                                <div class="flex flex-col md:flex-row items-center gap-4">
-                                    <a href="#" class="hover:text-rose-400 transition">Home</a>
-                                    <a href="RedhotConcept.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">RedhotConcept</a>
-                                    <a href="Doubledoors.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">Double Doors Studios</a>
-                                    <a href="Teffest.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">TEFFEST</a>
-                                    <a href="Oseal.html" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">Oseal</a>
-                                    <a href="#contact" class="text-rose-200 hover:text-rose-500 hover:underline ease-in-out mx-6">Contact</a>
-                                </div>
-
                                 <!-- Social Media Icons -->
-                                <div class="flex gap-4">
-                                    <a href="#" aria-label="Instagram" class="hover:text-rose-400 transition">
-                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.206.058 2.003.25 2.47.415a4.927 4.927 0 011.675 1.093 4.927 4.927 0 011.093 1.675c.165.467.357 1.264.415 2.47.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.058 1.206-.25 2.003-.415 2.47a4.927 4.927 0 01-1.093 1.675 4.927 4.927 0 01-1.675 1.093c-.467.165-1.264.357-2.47.415-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.206-.058-2.003-.25-2.47-.415a4.927 4.927 0 01-1.675-1.093 4.927 4.927 0 01-1.093-1.675c-.165-.467-.357-1.264-.415-2.47C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.058-1.206.25-2.003.415-2.47a4.927 4.927 0 011.093-1.675 4.927 4.927 0 011.675-1.093c.467-.165 1.264-.357 2.47-.415C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.332.015 7.053.072 5.775.129 4.833.296 4.053.61a6.87 6.87 0 00-2.49 1.64A6.87 6.87 0 00.61 4.053C.296 4.833.129 5.775.072 7.053.015 8.332 0 8.741 0 12c0 3.259.015 3.668.072 4.947.057 1.278.224 2.22.538 3 .315.78.738 1.446 1.362 2.07.624.624 1.29 1.047 2.07 1.362.78.314 1.722.481 3 .538 1.279.057 1.688.072 4.947.072s3.668-.015 4.947-.072c1.278-.057 2.22-.224 3-.538a6.87 6.87 0 002.07-1.362 6.87 6.87 0 001.362-2.07c.314-.78.481-1.722.538-3 .057-1.279.072-1.688.072-4.947s-.015-3.668-.072-4.947c-.057-1.278-.224-2.22-.538-3a6.87 6.87 0 00-1.362-2.07 6.87 6.87 0 00-2.07-1.362c-.78-.314-1.722-.481-3-.538C15.668.015 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
-                                    </a>
-                                    <a href="#" aria-label="Twitter" class="hover:text-rose-400 transition">
-                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.954 4.569a10 10 0 01-2.825.775A4.958 4.958 0 0023.337 3.1a10.1 10.1 0 01-3.127 1.184 4.92 4.92 0 00-8.379 4.482A13.978 13.978 0 011.671 3.15a4.822 4.822 0 001.523 6.573 4.902 4.902 0 01-2.229-.616v.06a4.936 4.936 0 003.946 4.827 4.902 4.902 0 01-2.224.084 4.937 4.937 0 004.604 3.417A9.867 9.867 0 010 19.54a13.951 13.951 0 007.548 2.209c9.057 0 14.01-7.5 14.01-14.004 0-.213-.006-.425-.017-.636a9.936 9.936 0 002.414-2.54z"/></svg>
-                                    </a>
+                                
+                            </div>
+                            <hr class="my-4 border-stone-600">
+                            <div class="flex flex-col md:flex-row justify-between items-center">
+                                <div>
+                                    <p class="text-sm">Follow us on:</p>
+                                    <div class="flex justify-start space-x-4">
+                                        <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-twitter"></i></a>
+                                        <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-facebook"></i></a>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="mt-8 text-center text-sm text-stone-500">
-                            © 2025 RedHot Group. All rights reserved.
-                            </div>
+                                <div class="mt-8 text-center text-sm text-stone-500">
+                                    © 2025 RedHot Group. All rights reserved.
+                                </div>
+                                <div>
+                                    <img src="assets/logo.png" class="h-20 p-0" alt="RedHot Logo">
+                                </div>
+                            </div>                    
                         </div>
-                    </footer>
+                    </footer>                
                 </main>
             </div>
         </div>
-        <script src="index.js"></script>
+
+    <!-- SCRIPTS -->
+       <script src="index.js"></script>
 
     </body>
 </html>
