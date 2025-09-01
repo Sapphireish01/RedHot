@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { type: "image", media: "assets/heroimg-1.png", title: "REDHOT VIBES", description: "Capturing moments that define African entertainment.", link: "#redhot-vibes" },
     { type: "video", media: "assets/vid-1.mp4", poster: "assets/tff-1.webp", title: "Heart Stories", description: "A matter of the heart.", link: "#heart-stories" },
     { type: "image", media: "assets/heroimg-2.jpg", title: "LIGHTS & STORIES", description: "Where powerful narratives meet stunning visuals.", link: "#lights-stories" },
-    { type: "video", media: "assets/vid-3.mp4", poster: "assets/dd-1.webp", title: "SEE", description: "Power in vision.", link: "#see" },
+    { type: "video", media: "assets/vid-2.webm", poster: "assets/dd-1.webp", title: "SEE", description: "Power in vision.", link: "#see" },
     { type: "image", media: "assets/heroimg-3.jpeg", title: "Love and Laughs", description: "Serenity.", link: "#love-laughs" }
   ];
 
