@@ -1,331 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Double Doors Studios - A creative hub for artists, filmmakers, and digital creators in West Africa." />
-    <meta name="keywords" content="Double Doors Studios, creative hub, West Africa, artists, filmmakers, digital creators, studios, residency, performance spaces, immersive studios" />
-    <title>Doubledoors Studios</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  </head>
-  <body class="bg-white min-h-screen text-black mx-[1rem] md:mx-0">
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b border-white/20 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center py-4">
-        
-          <!-- Left side: Hamburger + Logo -->
-          <div class="flex items-center space-x-4">
-            <button id="hamburgerBtn" class="text-red-500 hover:text-amber-400 focus:outline-none z-30">
-              <i data-lucide="menu" class="w-8 h-8"></i>
-            </button>
-            <div class="flex items-center space-x-2">
-              <img src="assets/dd" alt="" class="">
-              <span class="text-2xl font-bold text-black">Doubledoors Studios</span>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Double Doors Studios - Luxury filming locations and creative spaces in Lagos, Nigeria." />
+  <title>Doubledoors Studios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --cream: #faf8f5;
+      --warm-gray: #e8e4df;
+      --charcoal: #2a2a2a;
+      --soft-black: #1a1a1a;
+    }
+
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    .serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--charcoal);
+    }
+
+    /* Glassmorphism utility */
+    .glass {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .glass-dark {
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Scroll-reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s cubic-bezier(.22, 1, .36, 1), transform 1s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: opacity 1s cubic-bezier(.22, 1, .36, 1), transform 1s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .reveal-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity 1s cubic-bezier(.22, 1, .36, 1), transform 1s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .reveal-right.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Gallery slides */
+    .gallery-slide {
+      transition: opacity 1.2s ease-in-out;
+    }
+
+    /* Circle arrow button */
+    .circle-arrow {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1.5px solid var(--charcoal);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      background: transparent;
+      color: var(--charcoal);
+    }
+
+    .circle-arrow:hover {
+      background: var(--charcoal);
+      color: white;
+    }
+
+    .circle-arrow-light {
+      border-color: rgba(255, 255, 255, 0.6);
+      color: white;
+    }
+
+    .circle-arrow-light:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: white;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      backdrop-filter: blur(12px);
+    }
+
+    /* Back-to-top */
+    #backToTop {
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .gallery-dot {
+      transition: all 0.3s ease;
+    }
+
+    /* Stats gradient text */
+    .stat-number {
+      background: linear-gradient(135deg, #c0392b, #e67e22);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    #parallaxHero {
+      will-change: transform;
+    }
+
+    /* Smooth image hover */
+    .img-hover {
+      overflow: hidden;
+    }
+
+    .img-hover img {
+      transition: transform 0.8s cubic-bezier(.25, .46, .45, .94);
+    }
+
+    .img-hover:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Horizontal scroll hide */
+    .scroll-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Label style */
+    .label-sm {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(42, 42, 42, 0.5);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen scroll-smooth overflow-x-hidden">
+
+  <!-- ═══════════════ NAVBAR (glass) ═══════════════ -->
+  <nav class="fixed top-0 w-full z-50 glass">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-4">
+          <button id="hamburgerBtn" class="text-stone-700 hover:text-red-700 focus:outline-none z-30">
+            <i data-lucide="menu" class="w-7 h-7"></i>
+          </button>
+          <span class="text-lg font-medium tracking-widest uppercase text-stone-800"
+            style="font-family:'Inter',sans-serif; font-size:0.8rem; letter-spacing:0.25em;">Doubledoors Studios</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-10">
+          <a href="#story" class="label-sm hover:text-red-700 transition-colors" style="color:var(--charcoal);">Our
+            Story</a>
+          <a href="#gallery" class="label-sm hover:text-red-700 transition-colors"
+            style="color:var(--charcoal);">Gallery</a>
+          <a href="#spaces" class="label-sm hover:text-red-700 transition-colors"
+            style="color:var(--charcoal);">Spaces</a>
+          <a href="#contact" class="flex items-center gap-2 label-sm hover:text-red-700 transition-colors"
+            style="color:var(--charcoal);">
+            Book Now
+            <span class="circle-arrow" style="width:32px;height:32px;">
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ DRAWER ═══════════════ -->
+  <div id="menuDrawer" class="fixed inset-0 z-[60] hidden">
+    <div id="menuOverlay" class="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-300"></div>
+    <div id="menuPanel"
+      class="absolute left-0 top-0 h-full w-72 glass-card transform -translate-x-full transition-transform duration-300 py-10 px-6 flex flex-col items-start space-y-6 text-lg z-[70]"
+      style="background:rgba(250,248,245,0.92);">
+      <button id="closeDrawer" class="self-end text-stone-500 hover:text-red-700">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <img class="h-24 mb-4" src="assets/logo.png" alt="RedHot Group Logo">
+      <ul class="space-y-5 w-full">
+        <li><a href="index.html"
+            class="block py-1 text-stone-600 hover:text-red-700 transition-colors text-sm tracking-wider uppercase">Home</a>
+        </li>
+        <li><a href="RedhotConcept.html"
+            class="block py-1 text-stone-600 hover:text-red-700 transition-colors text-sm tracking-wider uppercase">RedhotConcepts</a>
+        </li>
+        <li><a href="Doubledoors.html"
+            class="block py-1 text-red-700 font-semibold transition-colors text-sm tracking-wider uppercase">Double
+            Doors Studios</a></li>
+        <li><a href="Oseal.html"
+            class="block py-1 text-stone-600 hover:text-red-700 transition-colors text-sm tracking-wider uppercase">Oseal</a>
+        </li>
+        <li><a href="Oyep.html"
+            class="block py-1 text-stone-600 hover:text-red-700 transition-colors text-sm tracking-wider uppercase">OYEP</a>
+        </li>
+        <li><a href="https://www.teffest.com/"
+            class="block py-1 text-stone-600 hover:text-red-700 transition-colors text-sm tracking-wider uppercase">TEFFEST</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════ HERO — Centered Minimal ═══════════════ -->
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-8 relative"
+    id="hero">
+    <div class="reveal">
+      <p class="label-sm mb-6">Modern Comfort</p>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-medium leading-tight mb-6 max-w-3xl" style="line-height:1.15;">
+        Where Luxury Meets<br>Creative Vision
+      </h1>
+      <p class="text-stone-500 text-base md:text-lg max-w-lg mx-auto mb-10 font-light leading-relaxed">
+        Doubledoors Studios is a premium filming and creative space where comfort and bold design flow together.
+        <br>
+        Escape. Create. Elevate.
+      </p>
+      <a href="#contact" class="inline-flex items-center gap-3 group">
+        <span class="label-sm" style="color:var(--charcoal); letter-spacing:0.2em;">BOOK NOW</span>
+        <span class="circle-arrow group-hover:bg-stone-800 group-hover:text-white">
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </span>
+      </a>
+    </div>
+
+    <!-- 3 images row below hero text -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16 w-full max-w-6xl reveal" style="transition-delay:0.25s;">
+      <div class="img-hover rounded-2xl h-[280px] md:h-[350px]">
+        <img src="assets/dd-1.webp" alt="Doubledoors" class="w-full h-full object-cover rounded-2xl">
+      </div>
+      <div class="img-hover rounded-2xl h-[280px] md:h-[350px]">
+        <img src="assets/dd-3.webp" alt="Doubledoors" class="w-full h-full object-cover rounded-2xl">
+      </div>
+      <div class="img-hover rounded-2xl h-[280px] md:h-[350px]">
+        <img src="assets/dd-5.webp" alt="Doubledoors" class="w-full h-full object-cover rounded-2xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ OUR STORY — Editorial Split ═══════════════ -->
+  <section id="story" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+      <!-- Two images -->
+      <div class="flex gap-4 lg:w-[58%]">
+        <div class="img-hover rounded-2xl w-[55%] h-[400px] md:h-[520px] reveal-left">
+          <img src="assets/dd-4.webp" alt="Doubledoors exterior" class="w-full h-full object-cover rounded-2xl">
+        </div>
+        <div class="img-hover rounded-2xl w-[45%] h-[400px] md:h-[520px] mt-12 reveal-left"
+          style="transition-delay:0.15s;">
+          <img src="assets/dd-2.webp" alt="Doubledoors interior" class="w-full h-full object-cover rounded-2xl">
+        </div>
+      </div>
+      <!-- Text -->
+      <div class="lg:w-[42%] reveal-right">
+        <p class="label-sm mb-4">Our Story</p>
+        <h2 class="text-3xl md:text-5xl font-medium leading-tight mb-6" style="line-height:1.2;">
+          A Sanctuary<br>Crafted For<br>Creatives
+        </h2>
+        <p class="text-stone-500 font-light leading-relaxed mb-8 max-w-md">
+          Each space blends calm modern design with bold architectural textures, offering premium production-ready
+          environments and a sense of effortless luxury in the heart of Lekki, Lagos.
+        </p>
+        <a href="#gallery" class="inline-flex items-center gap-3 group">
+          <span class="label-sm" style="color:var(--charcoal);">EXPLORE SPACES</span>
+          <span class="circle-arrow group-hover:bg-stone-800 group-hover:text-white">
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ DESIGNED FOR FILMING — Horizontal Row ═══════════════ -->
+  <section id="spaces" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12 reveal">
+        <div>
+          <h2 class="text-3xl md:text-5xl font-medium leading-tight">Designed for<br>Luxury Filming</h2>
+          <p class="text-stone-500 font-light mt-4 max-w-lg">Every corner invites creativity — from immersive studios to
+            open-concept lounges and premium set spaces.</p>
+        </div>
+        <a href="#gallery" class="inline-flex items-center gap-3 group mt-6 md:mt-0">
+          <span class="label-sm" style="color:var(--charcoal);">VIEW GALLERY</span>
+          <span class="circle-arrow group-hover:bg-stone-800 group-hover:text-white">
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </span>
+        </a>
+      </div>
+
+      <!-- Horizontal scroll row -->
+      <div class="flex gap-5 overflow-x-auto scroll-hide pb-4 reveal" style="transition-delay:0.2s;">
+        <div class="img-hover rounded-2xl min-w-[300px] md:min-w-[380px] h-[300px] md:h-[380px] flex-shrink-0">
+          <img src="assets/dd-1.webp" alt="Studio Space 1" class="w-full h-full object-cover rounded-2xl">
+        </div>
+        <div class="img-hover rounded-2xl min-w-[300px] md:min-w-[380px] h-[300px] md:h-[380px] flex-shrink-0">
+          <img src="assets/dd-2.webp" alt="Studio Space 2" class="w-full h-full object-cover rounded-2xl">
+        </div>
+        <div class="img-hover rounded-2xl min-w-[300px] md:min-w-[380px] h-[300px] md:h-[380px] flex-shrink-0">
+          <img src="assets/dd-3.webp" alt="Studio Space 3" class="w-full h-full object-cover rounded-2xl">
+        </div>
+        <div class="img-hover rounded-2xl min-w-[300px] md:min-w-[380px] h-[300px] md:h-[380px] flex-shrink-0">
+          <img src="assets/dd-4.webp" alt="Studio Space 4" class="w-full h-full object-cover rounded-2xl">
+        </div>
+        <div class="img-hover rounded-2xl min-w-[300px] md:min-w-[380px] h-[300px] md:h-[380px] flex-shrink-0">
+          <img src="assets/dd-5.webp" alt="Studio Space 5" class="w-full h-full object-cover rounded-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ GALLERY SLIDESHOW — Glass Overlay ═══════════════ -->
+  <section id="gallery" class="py-24 px-6 reveal">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="label-sm mb-4">Portfolio</p>
+        <h2 class="text-3xl md:text-5xl font-medium">The Gallery</h2>
+      </div>
+
+      <div id="gallerySlider" class="relative rounded-3xl overflow-hidden group">
+        <!-- Slides -->
+        <div class="relative w-full h-[400px] md:h-[600px]">
+          <div class="gallery-slide absolute inset-0 opacity-100">
+            <img src="assets/dd-1.webp" alt="Doubledoors Studio 1" class="w-full h-full object-cover">
+          </div>
+          <div class="gallery-slide absolute inset-0 opacity-0">
+            <img src="assets/dd-2.webp" alt="Doubledoors Studio 2" class="w-full h-full object-cover">
+          </div>
+          <div class="gallery-slide absolute inset-0 opacity-0">
+            <img src="assets/dd-3.webp" alt="Doubledoors Studio 3" class="w-full h-full object-cover">
+          </div>
+          <div class="gallery-slide absolute inset-0 opacity-0">
+            <img src="assets/dd-4.webp" alt="Doubledoors Studio 4" class="w-full h-full object-cover">
+          </div>
+          <div class="gallery-slide absolute inset-0 opacity-0">
+            <img src="assets/dd-5.webp" alt="Doubledoors Studio 5" class="w-full h-full object-cover">
           </div>
 
-          <!-- Desktop links -->
-          <div class="hidden md:flex space-x-8">
-            <a href="#Listings" class="text-black/70 hover:text-red-500 transition-colors">Listings</a>
-            <a href="#gallery" class="text-black/70 hover:text-red-500 transition-colors">Gallery</a>
-            <a href="#contact">
-              <button class="bg-gradient-to-r from-red-600 to-amber-500 text-black px-6 py-2 rounded-lg hover:opacity-90 transition-colors font-medium">
-                Contact for booking
+          <!-- Glass overlay info bar -->
+          <div class="absolute bottom-0 left-0 right-0 glass-dark py-5 px-6 md:px-10 flex items-center justify-between">
+            <div>
+              <p class="text-white/60 text-xs tracking-widest uppercase mb-1">Doubledoors Studios</p>
+              <p class="text-white text-sm font-light">Click to view full size</p>
+            </div>
+            <div class="flex gap-3">
+              <button id="galleryPrev" class="circle-arrow circle-arrow-light" style="width:40px;height:40px;">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
               </button>
-            </a>
+              <button id="galleryNext" class="circle-arrow circle-arrow-light" style="width:40px;height:40px;">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
 
-    <!-- Slide-out Drawer -->
-    <div id="menuDrawer" class="fixed inset-0 z-20 hidden">
-      <div id="menuOverlay" class="absolute inset-0 bg-white/70 opacity-0 transition-opacity"></div>
-      <div id="menuPanel" class="absolute left-0 top-0 h-full w-72 bg-stone-100 transform -translate-x-full transition-transform duration-300 py-10 px-6 flex flex-col items-start space-y-6 text-xl text-black/80">
-        <button id="closeDrawer" class="self-end text-red-400 hover:text-amber-500">
-          <i data-lucide="x" class="w-7 h-7"></i>
-        </button>
-        <img class="h-28 mb-6" src="assets/logo.png" alt="RedHot Group Logo">
-        <ul class="space-y-6">
-          <li><a href="index.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">Home</a></li>
-          <li><a href="RedhotConcept.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">RedhotConcepts</a></li>
-          <li><a href="Doubledoors.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">Double Doors Studios</a></li>
-          <li><a href="Oseal.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">Oseal</a></li>
-          <li><a href="Oyep.html" class="hover:text-red-500 border-b border-gray-200 hover:underline">OYEP</a></li>
-          <li><a href="https://www.teffest.com/" class="hover:text-red-500 border-b border-gray-200 hover:underline">TEFFEST</a></li>
-        </ul>
+        <!-- Dots -->
+        <div class="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-2.5">
+          <button class="gallery-dot w-2.5 h-2.5 rounded-full bg-white scale-125"></button>
+          <button class="gallery-dot w-2.5 h-2.5 rounded-full bg-white/40"></button>
+          <button class="gallery-dot w-2.5 h-2.5 rounded-full bg-white/40"></button>
+          <button class="gallery-dot w-2.5 h-2.5 rounded-full bg-white/40"></button>
+          <button class="gallery-dot w-2.5 h-2.5 rounded-full bg-white/40"></button>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="mx-[1rem] md:mx-0">
-      <!-- Hero Section -->
-      <section class="relative max-h-screen h-full mt-[5rem]" id="hero">
-
-        <div class="w-full px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-6">
-          <div class=" flex md:flex-col gap-3 justify-center md:min-h-screen lg:w-[50%]">
-            <div class="lg:flex lg:flex-col gap-6">
-              <h1 class="text-3xl text-center md:text-6xl font-bold text-black mb-6 leading-tight">
-                LUXURY REAL ESTATE
-                <span class="block text-red-500">FILMING</span>
-                <span class="block text-gray-400">PREMIUM LOCATIONS</span>
-              </h1>
-              <p class="text-lg text-black/80">Discover the finest filming locations tailored for luxury projects.</p>
-              <div class="flex justify-between md:justify-center mt-4">
-                <button id="openContact" class="bg-red-600 md:w-1/4 text-white px-6 py-2 rounded-lg hover:opacity-90 transition-colors font-medium">
-                  Contact for booking
-                </button>
-                <button class="ml-4 md:w-1/4 border border-amber-500 hover:bg-amber-500 text-black px-6 py-2 rounded-lg hover:opacity-90 transition-colors font-medium">
-                  spaces
-                </button> 
-              </div>
-            </div>
-            <div class="md:gap-4 mt-8 hidden md:flex">
-              <div>
-                <img src="assets/dd-1.webp" alt="Doubledoors" class="w-full h-[300px] object-cover overflow-hidden rounded-3xl">
-              </div>
-              <div class="bg-gray-200 p-4 rounded-lg text-lg text-black flex flex-col gap-4 justify-center">
-                <!-- <p>concept <span class="text-white">Locations</span></p> -->
-
-                <h4 class="text-xl font-bold text-black">CONCEPT</h4>
-                <!-- <h4 class="text-lg text-black/80">LOCATIONS</h4> -->
-                <p class="text-black/80">Explore our unique concept locations designed for high-end productions.</p>
-                <p class="text-black/80">lekki phase 1, Lagos <span class="text-red-500">Nigeria</span></p>
-              </div>
-            </div>
-          </div>
-          <div class="rounded-3xl w-[50%]  h-[50vh] hidden lg:block">
-            <img src="assets/dd-3.webp" alt="Doubledoors" class="w-full h-[800px] object-cover overflow-hidden rounded-3xl">
-          </div>
-        </div>
-
-      </section>
-
-      <section id="gallery" class="py-20 w-full max-w-7xl mx-auto">
-        <div>
-          <h2 class="text-center text-5xl font-bold bg-stone-200 py-6 text-black mb-4">Gallery</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-          <img src="assets/dd-2.webp" alt="Doubledoors" class="w-full h-[450px] object-cover overflow-hidden rounded-3xl">
-          <img src="assets/dd-4.webp" alt="Doubledoors" class="w-full h-[450px] object-cover overflow-hidden rounded-3xl">
-          <img src="assets/dd-5.webp" alt="Doubledoors" class="w-full h-[450px] object-cover overflow-hidden rounded-3xl">
-          <img src="assets/dd-1.webp" alt="Doubledoors" class="w-full h-[450px] object-cover overflow-hidden rounded-3xl">
-        </div>
-      </section>
-
-
-      
-
-      <!-- Services -->
-      <section id="Listings" class="py-20 w-full max-w-7xl mx-auto flex flex-col gap-8">
-        <div>
-          <h2 class="text-center text-5xl font-bold bg-stone-200 py-6 text-black mb-4">Available Now</h2>
-        </div>
-        <div class="flex flex-col md:flex-row gap-4 mx-auto px-6 md:px-12 bg-stone-300 rounded-tl-[50px] p-10 overflow-hidden rounded-br-[50px]">
-          <div class="md:w-[50%]"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Service 1"></div>
-          <div class="md:w-[50%] flex flex-col gap-4 justify-end">
-            <h3 class="text-3xl md:text-5xl font-bold">Deluxe Residence</h3>
-            <p class="text-lg text-italic">Experience the epitome of luxury living in our Deluxe Residence.</p>
-            <div class="">
-              <p class="text-black/80 text-[20px]">Swimming pool</p>
-              <p class="text-black/80 text-[20px]">Private gym</p>
-              <p class="text-black/80 text-[20px]">Home theater</p>
-              <p class="text-black/80 text-[20px]">Smart home technology</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-col md:flex-row gap-4 mx-auto px-6 md:px-12 bg-stone-300 rounded-tl-[50px] p-10 overflow-hidden rounded-br-[50px]">
-          <div class="md:w-[50%]"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Service 1"></div>
-          <div class="md:w-[50%] flex flex-col gap-4 justify-end">
-            <h3 class="text-3xl md:text-5xl font-bold">Deluxe Residence</h3>
-            <p class="text-lg text-italic">Experience the epitome of luxury living in our Deluxe Residence.</p>
-            <div class="">
-              <p class="text-black/80 text-[20px]">Swimming pool</p>
-              <p class="text-black/80 text-[20px]">Private gym</p>
-              <p class="text-black/80 text-[20px]">Home theater</p>
-              <p class="text-black/80 text-[20px]">Smart home technology</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-col md:flex-row gap-4 mx-auto px-6 md:px-12 bg-stone-300 rounded-tl-[50px] p-10 overflow-hidden rounded-br-[50px]">
-          <div class="md:w-[50%]"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Service 1"></div>
-          <div class="md:w-[50%] flex flex-col gap-4 justify-end">
-            <h3 class="text-3xl md:text-5xl font-bold">Deluxe Residence</h3>
-            <p class="text-lg text-italic">Experience the epitome of luxury living in our Deluxe Residence.</p>
-            <div class="">
-              <p class="text-black/80 text-[20px]">Swimming pool</p>
-              <p class="text-black/80 text-[20px]">Private gym</p>
-              <p class="text-black/80 text-[20px]">Home theater</p>
-              <p class="text-black/80 text-[20px]">Smart home technology</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-   
-    <!-- Footer -->
-    <footer class="bg-[#1e1e1e] text-[#e9d7c3] py-10">
-      <div class="container mx-auto px-6 md:px-12">
-        <div class="flex flex-col md:flex-row justify-around items-center gap-2 md:gap-0">                        
-          <!-- Logo & Tagline -->
-          <div id="contact" class="text-center md:text-left">
-            <p class="text-center font-bold">CONTACT US</p>
-            <p><a href="mailto:info@redhotgroup.com" class="text-stone-500 hover:text-stone-300">info@redhotgroup.com</a></p>
-          </div>
-          <!-- Social Media Icons -->
-            
-        </div>
-        <hr class="my-4 border-stone-600">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div>
-            <p class="text-sm">Follow us on:</p>
-            <div class="flex justify-start space-x-4">
-              <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-twitter"></i></a>
-              <a href="#" class="text-stone-500 hover:text-stone-300"><i class="fa-brands fa-facebook"></i></a>
-          </div>
-          </div>
-          <div class="mt-8 text-center text-sm text-stone-500">
-              © 2025 RedHot Group. All rights reserved.
-          </div>
-          <div>
-            <img src="assets/logo.png" class="h-20 p-0" alt="RedHot Logo">
-          </div>
-        </div>                    
+  <!-- ═══════════════ STATS — Glass Cards ═══════════════ -->
+  <section id="stats" class="py-24 px-6 reveal">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="label-sm mb-4">By The Numbers</p>
+        <h2 class="text-3xl md:text-4xl font-medium">Why Doubledoors?</h2>
       </div>
-  </footer> 
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="glass-card rounded-2xl p-8 text-center">
+          <span class="stat-number text-4xl md:text-5xl font-bold serif" data-target="20" data-suffix="+">0</span>
+          <p class="text-stone-500 text-sm mt-3 tracking-wide">Productions</p>
+        </div>
+        <div class="glass-card rounded-2xl p-8 text-center">
+          <span class="stat-number text-4xl md:text-5xl font-bold serif" data-target="5000" data-suffix="">0</span>
+          <p class="text-stone-500 text-sm mt-3 tracking-wide">Sq Ft Space</p>
+        </div>
+        <div class="glass-card rounded-2xl p-8 text-center">
+          <span class="stat-number text-4xl md:text-5xl font-bold serif" data-target="50" data-suffix="+">0</span>
+          <p class="text-stone-500 text-sm mt-3 tracking-wide">Happy Clients</p>
+        </div>
+        <div class="glass-card rounded-2xl p-8 text-center">
+          <span class="stat-number text-4xl md:text-5xl font-bold serif" data-target="8" data-suffix="">0</span>
+          <p class="text-stone-500 text-sm mt-3 tracking-wide">Studio Spaces</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- JS -->
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const hamburgerBtn = document.getElementById("hamburgerBtn");
-      const menuDrawer = document.getElementById("menuDrawer");
-      const menuOverlay = document.getElementById("menuOverlay");
-      const menuPanel = document.getElementById("menuPanel");
-      const closeDrawer = document.getElementById("closeDrawer");
+  <!-- ═══════════════ LIGHTBOX ═══════════════ -->
+  <div id="lightbox" class="fixed inset-0 z-[100] bg-black/85 hidden items-center justify-center">
+    <button id="lightboxClose" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors">
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+    <button id="lightboxPrev"
+      class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 circle-arrow circle-arrow-light">
+      <i data-lucide="arrow-left" class="w-5 h-5"></i>
+    </button>
+    <img id="lightboxImg" src="" alt="Gallery full view" class="max-w-[90vw] max-h-[85vh] object-contain rounded-xl">
+    <button id="lightboxNext"
+      class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 circle-arrow circle-arrow-light">
+      <i data-lucide="arrow-right" class="w-5 h-5"></i>
+    </button>
+  </div>
 
-      function openDrawer() {
-        menuDrawer.classList.remove("hidden");
-        setTimeout(() => {
-          menuOverlay.classList.remove("opacity-0");
-          menuPanel.classList.remove("-translate-x-full");
-        }, 10);
-      }
-      function closeDrawerFn() {
-        menuOverlay.classList.add("opacity-0");
-        menuPanel.classList.add("-translate-x-full");
-        setTimeout(() => {
-          menuDrawer.classList.add("hidden");
-        }, 300);
-      }
-      hamburgerBtn.addEventListener("click", openDrawer);
-      closeDrawer.addEventListener("click", closeDrawerFn);
-      menuOverlay.addEventListener("click", closeDrawerFn);
+  <!-- ═══════════════ BACK TO TOP ═══════════════ -->
+  <button id="backToTop"
+    class="fixed bottom-6 right-6 z-50 circle-arrow opacity-0 pointer-events-none translate-y-4 shadow-lg"
+    style="background:var(--charcoal);color:white;border-color:var(--charcoal);">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
 
-      lucide.createIcons();
+  <!-- ═══════════════ CHECK AVAILABILITY FORM ═══════════════ -->
+  <section id="contact" class="py-24 px-6 reveal">
+    <div class="max-w-4xl mx-auto">
+      <div class="glass-card rounded-3xl p-8 md:p-14">
+        <div class="text-center mb-10">
+          <p class="label-sm mb-4">Reservations</p>
+          <h2 class="text-3xl md:text-5xl font-medium serif">Check Availability</h2>
+          <p class="text-stone-500 font-light mt-4 max-w-md mx-auto">Tell us about your project and preferred dates.
+            We'll get back to you within 24 hours.</p>
+        </div>
 
-      // Hero
-      const heroImages = [
-        "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        "https://images.pexels.com/photos/2883049/pexels-photo-2883049.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        "https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=1600"
-      ];
-      let currentHero = 0;
-      const heroImageEl = document.getElementById("heroImage");
-      const heroIndicators = document.getElementById("heroIndicators");
+        <!-- 
+          HOW THIS WORKS (no backend needed):
+          This form uses Formspree.io to forward submissions to your email.
+          
+          SETUP (takes 2 minutes):
+          1. Go to https://formspree.io and sign up (free plan = 50 submissions/month)
+          2. Create a new form and copy your form ID (e.g. "xpwzgkbn")
+          3. Replace YOUR_FORM_ID below with your actual ID
+          4. That's it! Submissions go straight to your email.
+        -->
+        <form id="availabilityForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+          <!-- Hidden field for email subject -->
+          <input type="hidden" name="_subject" value="New Booking Inquiry — Doubledoors Studios">
 
-      function renderHero() {
-        heroImageEl.src = heroImages[currentHero];
-        heroIndicators.innerHTML = heroImages.map((_, i) => 
-          `<button onclick="setHero(${i})" class="w-3 h-3 rounded-full ${i===currentHero?'bg-amber-400':'bg-white/50'}"></button>`
-        ).join("");
-      }
-      window.setHero = (i) => { currentHero=i; renderHero(); };
-
-      document.getElementById("nextHero").addEventListener("click", () => {
-        currentHero=(currentHero+1)%heroImages.length;
-        renderHero();
-      });
-      document.getElementById("prevHero").addEventListener("click", () => {
-        currentHero=(currentHero-1+heroImages.length)%heroImages.length;
-        renderHero();
-      });
-      renderHero();
-
-      // Contact Modal
-      const modal=document.getElementById("contactModal");
-      document.getElementById("openContact").onclick=()=>modal.classList.remove("hidden");
-      document.getElementById("bookNow").onclick=()=>modal.classList.remove("hidden");
-      document.getElementById("closeContact").onclick=()=>modal.classList.add("hidden");
-
-      // Properties
-      const featuredProperties = [
-        {id:1,title:"Modern Downtown Penthouse",location:"Manhattan, NYC",category:"luxury",images:["https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800"],price:"$2,500/day",sqft:"2,400 sq ft"},
-        {id:2,title:"Victorian Manor Estate",location:"Beverly Hills, CA",category:"period",images:["https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800"],price:"$4,200/day",sqft:"8,500 sq ft"},
-        {id:3,title:"Industrial Warehouse Loft",location:"Brooklyn, NYC",category:"industrial",images:["https://images.pexels.com/photos/2883049/pexels-photo-2883049.jpeg?auto=compress&cs=tinysrgb&w=800"],price:"$1,800/day",sqft:"5,200 sq ft"},
-        {id:4,title:"Beachfront Villa",location:"Malibu, CA",category:"luxury",images:["https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=800"],price:"$3,800/day",sqft:"4,800 sq ft"},
-      ];
-
-      let selectedCategory = "all";
-      const grid = document.getElementById("propertiesGrid");
-
-      function renderProps(){
-        const props = selectedCategory === "all" 
-          ? featuredProperties 
-          : featuredProperties.filter(p => p.category === selectedCategory);
-
-        grid.innerHTML = props.map(p => `
-          <div class="group relative overflow-hidden rounded-2xl bg-zinc-900">
-            <div class="aspect-[4/3] relative">
-              <img src="${p.images[0]}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-            </div>
-            <div class="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-red-500 text-white px-3 py-1 rounded-full font-bold text-sm">${p.price}</div>
-            <div class="p-6 relative z-10">
-              <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-amber-400 transition-colors">${p.title}</h3>
-              <div class="flex items-center text-white/60 gap-2 mb-3">
-                <i data-lucide="map-pin" class="w-4 h-4"></i> ${p.location}
-              </div>
-              <div class="flex items-center text-white/60 gap-2 mb-3">
-                <i data-lucide="ruler" class="w-4 h-4"></i> ${p.sqft}
-              </div>
-            </div>
+          <!-- Name -->
+          <div>
+            <label for="name" class="label-sm block mb-2">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your full name"
+              class="w-full px-5 py-3.5 rounded-xl bg-white/60 border border-stone-200 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-300 focus:border-transparent transition-all text-sm">
           </div>
-        `).join("");
-        lucide.createIcons();
-      }
 
-      // Category button underline toggle
-      document.querySelectorAll(".category-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-          // hide all underlines
-          document.querySelectorAll(".category-btn .underline-span")
-            .forEach(span => span.classList.add("scale-x-0"));
-          // show underline for clicked button
-          btn.querySelector(".underline-span").classList.remove("scale-x-0");
-          // update category
-          selectedCategory = btn.dataset.category;
-          renderProps();
-        });
-      });
+          <!-- Email -->
+          <div>
+            <label for="email" class="label-sm block mb-2">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com"
+              class="w-full px-5 py-3.5 rounded-xl bg-white/60 border border-stone-200 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-300 focus:border-transparent transition-all text-sm">
+          </div>
 
-      // Initial render
-      renderProps();
-      // Show underline on "All" button initially
-      document.querySelector('.category-btn[data-category="all"] .underline-span')
-        .classList.remove("scale-x-0");
+          <!-- Date -->
+          <div>
+            <label for="date" class="label-sm block mb-2">Preferred Date</label>
+            <input type="date" id="date" name="preferred_date" required
+              class="w-full px-5 py-3.5 rounded-xl bg-white/60 border border-stone-200 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-300 focus:border-transparent transition-all text-sm">
+          </div>
 
-      // Gallery
-      const galleryImgs=[...heroImages,...featuredProperties.flatMap(p=>p.images)];
-      const gallery=document.getElementById("galleryGrid");
-      gallery.innerHTML=galleryImgs.map(src=>`<div class="overflow-hidden rounded-xl group"><img src="${src}" class="w-full transition-transform duration-700 group-hover:scale-110"></div>`).join("");
-    });
-    </script>
-  </body>
+          <!-- Message -->
+          <div>
+            <label for="message" class="label-sm block mb-2">Message</label>
+            <textarea id="message" name="message" rows="4" required
+              placeholder="Tell us about your project, production needs, or any questions..."
+              class="w-full px-5 py-3.5 rounded-xl bg-white/60 border border-stone-200 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-300 focus:border-transparent transition-all text-sm resize-none"></textarea>
+          </div>
+
+          <!-- Submit -->
+          <div class="text-center pt-2">
+            <button type="submit" id="formSubmitBtn" class="inline-flex items-center gap-3 group">
+              <span class="label-sm" style="color:var(--charcoal); letter-spacing:0.2em;">CHECK AVAILABILITY</span>
+              <span class="circle-arrow group-hover:bg-stone-800 group-hover:text-white">
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </span>
+            </button>
+          </div>
+
+          <!-- Success message (hidden by default) -->
+          <div id="formSuccess" class="hidden text-center py-4">
+            <p class="text-green-700 font-medium">✓ Your inquiry has been sent! We'll be in touch shortly.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER — editorial ═══════════════ -->
+  <footer class="py-16 px-6 border-t border-stone-200" style="background:var(--cream);">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 mb-10">
+        <div>
+          <p class="label-sm mb-2">Get In Touch</p>
+          <h3 class="text-2xl md:text-3xl font-medium serif">Let's Create Together</h3>
+        </div>
+        <a href="mailto:doubledoorsstudios@gmail.com" class="inline-flex items-center gap-3 group">
+          <span class="label-sm" style="color:var(--charcoal);">doubledoorsstudios@gmail.com</span>
+          <span class="circle-arrow group-hover:bg-stone-800 group-hover:text-white" style="width:36px;height:36px;">
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </span>
+        </a>
+      </div>
+      <hr class="border-stone-200 mb-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-6">
+          <a href="https://www.instagram.com/doubledoorsstudios/"
+            class="text-stone-400 hover:text-stone-800 transition-colors"><i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+          <a href="https://wa.link/mblawc" class="text-stone-400 hover:text-stone-800 transition-colors"><i
+              class="fa-brands fa-whatsapp text-lg"></i>
+          </a>
+
+        </div>
+        <p class="text-xs text-stone-400 tracking-wider">© 2026 REDHOT GROUP. ALL RIGHTS RESERVED.</p>
+        <img src="assets/logo.png" class="h-14" alt="RedHot Logo">
+      </div>
+    </div>
+  </footer>
+
+  <!-- External JS -->
+  <script src="doubledoors.js"></script>
+</body>
+
 </html>
